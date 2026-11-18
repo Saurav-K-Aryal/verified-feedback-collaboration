@@ -1,0 +1,20 @@
+{
+  "run_id": "20261118_full_mistral",
+  "mode": "full",
+  "execution_complete": true,
+  "post_study_replacement": true,
+  "already_observed_task_panel": true,
+  "scientific_comparison_valid": false,
+  "original_source_unchanged_verified_by_producer": true,
+  "finished_utc": "2026-11-18T14:05:53.065361+00:00",
+  "elapsed_seconds_this_invocation": 7165.768127084011,
+  "recorded_calls": 4848,
+  "request_errors": 0,
+  "scope": "Post-study replacement on the already observed panel. All contrasts are descriptive, including retained primary-form contrasts. Fresh responses do not create an unseen test panel. Original experiment unchanged.",
+  "gate_amendment": "Development gate recorded diagnostically; full panel collected irrespective of gate. Scientific confirmation always false.",
+  "cost_policy": "Three calls and 512-token completion caps per strategy; not equal FLOPs. New physical calls and logical reused-candidate portfolio charges reported separately.",
+  "failure_policy": "Every recorded serving error remains an outcome. No selective retry. Incomplete schedule may resume under identical code/configuration/model digests/server.",
+  "original_gate_conditions_met": true,
+  "exact_solver_timing_remeasured": false,
+  "exact_solver_timing_origin": "Original frozen study; rechecking certificates does not create new timing measurements."
+}

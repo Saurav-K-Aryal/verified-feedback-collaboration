@@ -1,0 +1,163 @@
+{
+  "eligible": true,
+  "grade_results": [
+    {
+      "family": "directed_path",
+      "grade": 0,
+      "strategy": "independent",
+      "n": 8,
+      "solved": 7,
+      "intermediate": true
+    },
+    {
+      "family": "directed_path",
+      "grade": 0,
+      "strategy": "validity",
+      "n": 8,
+      "solved": 8,
+      "intermediate": false
+    },
+    {
+      "family": "directed_path",
+      "grade": 0,
+      "strategy": "counterexample",
+      "n": 8,
+      "solved": 8,
+      "intermediate": false
+    },
+    {
+      "family": "directed_path",
+      "grade": 1,
+      "strategy": "independent",
+      "n": 8,
+      "solved": 7,
+      "intermediate": true
+    },
+    {
+      "family": "directed_path",
+      "grade": 1,
+      "strategy": "validity",
+      "n": 8,
+      "solved": 6,
+      "intermediate": true
+    },
+    {
+      "family": "directed_path",
+      "grade": 1,
+      "strategy": "counterexample",
+      "n": 8,
+      "solved": 6,
+      "intermediate": true
+    },
+    {
+      "family": "directed_path",
+      "grade": 2,
+      "strategy": "independent",
+      "n": 8,
+      "solved": 2,
+      "intermediate": true
+    },
+    {
+      "family": "directed_path",
+      "grade": 2,
+      "strategy": "validity",
+      "n": 8,
+      "solved": 4,
+      "intermediate": true
+    },
+    {
+      "family": "directed_path",
+      "grade": 2,
+      "strategy": "counterexample",
+      "n": 8,
+      "solved": 5,
+      "intermediate": true
+    },
+    {
+      "family": "boolean_program",
+      "grade": 0,
+      "strategy": "independent",
+      "n": 8,
+      "solved": 1,
+      "intermediate": true
+    },
+    {
+      "family": "boolean_program",
+      "grade": 0,
+      "strategy": "validity",
+      "n": 8,
+      "solved": 0,
+      "intermediate": false
+    },
+    {
+      "family": "boolean_program",
+      "grade": 0,
+      "strategy": "counterexample",
+      "n": 8,
+      "solved": 0,
+      "intermediate": false
+    },
+    {
+      "family": "boolean_program",
+      "grade": 1,
+      "strategy": "independent",
+      "n": 8,
+      "solved": 0,
+      "intermediate": false
+    },
+    {
+      "family": "boolean_program",
+      "grade": 1,
+      "strategy": "validity",
+      "n": 8,
+      "solved": 0,
+      "intermediate": false
+    },
+    {
+      "family": "boolean_program",
+      "grade": 1,
+      "strategy": "counterexample",
+      "n": 8,
+      "solved": 0,
+      "intermediate": false
+    },
+    {
+      "family": "boolean_program",
+      "grade": 2,
+      "strategy": "independent",
+      "n": 8,
+      "solved": 0,
+      "intermediate": false
+    },
+    {
+      "family": "boolean_program",
+      "grade": 2,
+      "strategy": "validity",
+      "n": 8,
+      "solved": 0,
+      "intermediate": false
+    },
+    {
+      "family": "boolean_program",
+      "grade": 2,
+      "strategy": "counterexample",
+      "n": 8,
+      "solved": 0,
+      "intermediate": false
+    }
+  ],
+  "well_formed": {
+    "directed_path": {
+      "n": 504,
+      "well_formed": 387
+    },
+    "boolean_program": {
+      "n": 504,
+      "well_formed": 293
+    }
+  },
+  "request_errors": 0,
+  "smoke_execution_override": false,
+  "post_study_full_collection_override": true,
+  "rule": "Full mode requires no development request errors; at least one of the three prespecified development-selected strategies must solve 1 to 7 of 8 tasks in at least one grade of EACH family; at least half of development candidates in each family must be syntactically well formed. The informative strategy may differ by family, but all test strata and primary comparisons remain fixed. Gate failure skips all test model calls, preserves diagnostics, and is a completed ineligible study. AMENDMENT: record this gate diagnostically but collect the full test panel even if it fails. No confirmatory claim is eligible on these already viewed tasks."
+}

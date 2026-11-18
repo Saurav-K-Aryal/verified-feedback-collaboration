@@ -15,3 +15,7 @@ All files under `data/` and existing provenance records are covered by `data/SHA
 `original_pilot_*` files support the narrowly defined retrospective syntax diagnostic and original held-out task counts. Only 720 original test candidates are exported; the earlier complete pilot had 936 physical calls. These records are separate from the extension.
 
 `diagnostics/model_replacement.json` contains the separate single-task replacement-model protocol, response and exact-check result. Its task is included for self-contained rechecking. `provenance/recovery_observation.json` records the separate exact-request recovery result. Neither modifies frozen experimental outcomes.
+
+## Replacement bundle
+
+`studies/model_replacement/` mirrors the task/call/portfolio schema with separate hashes and reference tables. Its `data/repeatability_ledger.jsonl.gz` records every retained-configuration call, matched original UID when present, request identity SHA-256, old/new text hashes and Boolean verifier acceptance. `full_payload_equality_checked_in_archive` identifies the independently audited archive check; it is not a claim that omitted request objects are rechecked by the portable command. Supplement reference JSON files contain physical usage totals, family totals and the exploratory concordance counts.

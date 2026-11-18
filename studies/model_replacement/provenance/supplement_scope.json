@@ -1,0 +1,10 @@
+{
+  "scope": "Post hoc descriptive cost and retained-configuration repeatability supplement. No independent model replication; identical feedback requests are selected by identical previous-context payloads.",
+  "portable_checks": "The supplied raw responses support rechecking request-hash identity matches, response-text hashes, acceptance concordance, all cost totals and family totals.",
+  "archive_only_check": "Full request objects were compared in the original REQUESTS archives. Their prompts/system/options/digests/server versions are not duplicated in this portable ledger. Matching hashes are compact witnesses, not a reconstruction of those omitted objects.",
+  "independent_audit_sha256": "efe57708e7b8f599d5f607b12d7ed52e6a947797649048ff899b3af487dad127",
+  "original_request_archive_sha256": "04d5d4363fa42e36eabf11132bdb304a3c8078e0f691d0829d27a1c4f4085a55",
+  "replacement_request_archive_sha256": "e087f5c8cc3d8b14c9767ba43a87b19f7d389aeea45fa9f76ba4136a50ec1c39",
+  "new_retained_configuration_calls": 2976,
+  "matched_identity_pairs": 1911
+}

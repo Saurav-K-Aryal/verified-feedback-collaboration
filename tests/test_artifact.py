@@ -14,7 +14,8 @@ class EvidenceTests(unittest.TestCase):
         from artifact.study import run as run_study
         with tempfile.TemporaryDirectory() as out:result=run_study(ROOT,out,verify=True)
         self.assertEqual(result['physical_calls'],3824)
-        self.assertTrue(result['original_gate_conditions_met'])
+        self.assertTrue(result['development_gate_eligible'])
+        self.assertFalse(result['original_gate_conditions_met'])
         self.assertFalse(result['scientific_comparison_valid'])
     def test_generic_study_output_cannot_overlap_evidence(self):
         from artifact.study import run as run_study

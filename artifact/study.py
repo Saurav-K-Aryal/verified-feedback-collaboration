@@ -14,6 +14,68 @@ from .audit import METHODS,method_table
 STRATEGIES=('independent','validity','counterexample')
 FAMILIES=('directed_path','boolean_program')
 
+def validate_membership(manifest,raw,portfolios,development,selection,models,mode='full'):
+    """Derive scheduled physical identities independently of recorded membership.
+
+    Logical portfolios share initial calls and matched trajectories. Their exact
+    union, rather than a fixed physical count, defines the complete raw ledger.
+    """
+    require(mode=='full','This portable helper expects a full three-call schedule')
+    require(len(models)==3 and len(set(models))==3,'Expected three distinct models')
+    expected={}
+    def trajectory(task,strategy,sequence):
+        entries=[]
+        if strategy=='independent':
+            schedule=[(m,slot,'ind/'+str(models.index(m))+'/'+str(slot)) for slot,m in enumerate(sequence)] if len(set(sequence))==1 else [(m,0,'ind/'+str(models.index(m))+'/0') for m in sequence]
+        else:
+            tag=strategy+'/'+'-'.join(str(models.index(m)) for m in sequence)
+            schedule=[(sequence[0],0,'ind/'+str(models.index(sequence[0]))+'/0')]+[(m,10+slot,tag+'/'+str(slot)) for slot,m in enumerate(sequence[1:],1)]
+        for model,seed_slot,suffix in schedule:
+            uid=task['task_id']+'/'+suffix
+            identity={'task_id':task['task_id'],'phase':task['phase'],'model':model,
+                      'seed':int(core.digest([mode,task['task_id'],model,seed_slot])[:8],16)%2147483647}
+            require(uid not in expected or expected[uid]==identity,'Inconsistent planned shared call')
+            expected[uid]=identity;entries.append(uid)
+        return entries
+    planned_dev={}
+    for task in manifest['development']:
+        require(task['phase']=='development','Manifest development phase differs')
+        for model in models:
+            for strategy in STRATEGIES:
+                planned_dev[(task['task_id'],strategy,model)]=trajectory(task,strategy,[model]*3)
+    selected=selection['selected'];counter=selected['counterexample'];mixed=selection['mixed_order']
+    require(set(mixed)==set(models) and len(mixed)==3,'Invalid mixed sequence')
+    allocations={
+        'best_independent3':('independent',[selected['independent']]*3),
+        'best_validity3':('validity',[selected['validity']]*3),
+        'best_counterexample3':('counterexample',[counter]*3),
+        'mixed_independent3':('independent',mixed),
+        'mixed_counterexample3':('counterexample',mixed),
+        'matched_independent3':('independent',[counter]*3),
+        'matched_validity3':('validity',[counter]*3)}
+    planned_test={}
+    for task in manifest['test']:
+        require(task['phase']=='test','Manifest test phase differs')
+        for method,(strategy,sequence) in allocations.items():
+            planned_test[(task['task_id'],method)]=trajectory(task,strategy,sequence)
+    actual_dev={(r['task_id'],r['method'],r['selection_model']):r for r in development}
+    actual_test={(r['task_id'],r['method']):r for r in portfolios}
+    require(len(actual_dev)==len(development) and set(actual_dev)==set(planned_dev),'Development allocation keys differ')
+    require(len(actual_test)==len(portfolios) and set(actual_test)==set(planned_test),'Test allocation keys differ')
+    for actual,planned in [(actual_dev,planned_dev),(actual_test,planned_test)]:
+        for key,uids in planned.items():
+            require(actual[key]['candidate_uids']==uids,'Planned candidate order/model allocation differs: '+str(key))
+    calls={r['uid']:r for r in raw}
+    require(len(calls)==len(raw) and set(calls)==set(expected),'Raw call union differs from complete planned schedule')
+    for uid,identity in expected.items():
+        row=calls[uid]
+        require(all(row.get(key)==value for key,value in identity.items()),'Raw call identity differs: '+uid)
+        response=row.get('response',{})
+        for key in ['model','seed']:
+            if row['verdict']['kind']!='request_error' or key in response:
+                require(response.get(key)==identity[key],'Response identity differs: '+uid)
+    return {'expected_physical_calls':len(expected),'development_portfolios':len(planned_dev),'test_portfolios':len(planned_test)}
+
 def run(study,output,verify=False):
     study=Path(study).resolve();output=safe_output(output)
     require(study!=output and study not in output.parents and output not in study.parents,
@@ -47,13 +109,18 @@ def run(study,output,verify=False):
     require(Counter((r['task_id'],r['method']) for r in portfolios)==Counter((t['task_id'],m) for t in manifest['test'] for m in METHODS),'Unexpected test portfolio assignment')
     selection=load('data/development_selection.json');models=[r['model'] for r in selection['scores']]
     require(len(models)==3 and len(set(models))==3,'Expected three distinct configurations')
-    require(set(models)==set(load('provenance/generation_models.json')),'Model manifest mismatch')
+    model_metadata=load('provenance/generation_models.json')
+    require(set(models)==set(model_metadata),'Model manifest mismatch')
+    for row in raw:
+        if row['verdict']['kind']!='request_error':
+            require(row['model'] in model_metadata and row['response'].get('model_digest')==model_metadata[row['model']]['digest'],'Response model digest differs from pinned configuration')
     require(Counter((r['task_id'],r['method'],r['selection_model']) for r in dev)==Counter((t['task_id'],s,m) for t in manifest['development'] for s in STRATEGIES for m in models),'Development portfolios incomplete')
     counts={s:{m:sum(r['accepted'] for r in dev if r['method']==s and r['selection_model']==m) for m in models} for s in STRATEGIES}
     selected={s:max(models,key=lambda m:(counts[s][m],-models.index(m))) for s in STRATEGIES}
     require(selection['selected']==selected,'Development model selection mismatch')
     expected_order=sorted(models,key=lambda m:(-counts['counterexample'][m],-counts['independent'][m],models.index(m)))
     require(selection['mixed_order']==expected_order,'Mixed model order mismatch')
+    membership=validate_membership(manifest,raw,portfolios,dev,selection,models)
     grade_rows=[];informative={f:False for f in FAMILIES};syntax={}
     for family in FAMILIES:
         for grade in range(3):
@@ -87,14 +154,14 @@ def run(study,output,verify=False):
         row=core.conservative_comparison(all_rows,'best_counterexample3',baseline)
         comparisons.append(dict(method=row['method'],baseline=baseline,n=row['n'],difference=row['difference'],interval_level=row['interval_level'],lower=row['conservative_paired_interval'][0],upper=row['conservative_paired_interval'][1],above_five_point_margin=row['above_five_point_margin'],frozen_comparison_valid=valid))
     exact=sum(core.check_candidate(t,core.canonical(core.exact_solve(t)))['accepted'] for t in manifest['test'])
-    summary=dict(physical_calls=len(raw),test_tasks=len(manifest['test']),request_errors=error_count,first_call_solved=sum(r['verdict']['accepted'] for r in initial),exact_solver_solved=exact,scientific_comparison_valid=valid,original_gate_conditions_met=gate_met,post_study_replacement=followup,method_solved={r['method']:r['solved'] for r in methods if r['method'] in METHODS},selected_models=selected)
+    summary=dict(physical_calls=len(raw),test_tasks=len(manifest['test']),request_errors=error_count,first_call_solved=sum(r['verdict']['accepted'] for r in initial),exact_solver_solved=exact,scientific_comparison_valid=valid,development_gate_eligible=gate_met,original_gate_conditions_met=gate_met and error_count==0,post_study_replacement=followup,method_solved={r['method']:r['solved'] for r in methods if r['method'] in METHODS},selected_models=selected)
     output.mkdir(parents=True,exist_ok=True)
     tables={'method_results':methods,'family_grade_results':family_rows,'primary_comparisons':comparisons}
     for name,table in tables.items():write_csv(output/(name+'.csv'),table)
     write_json(output/'summary.json',summary)
     if verify:
         for name,keys in [('method_results',['method']),('family_grade_results',['family','grade','method']),('primary_comparisons',['method','baseline'])]:verify_csv(output/(name+'.csv'),study/f'results/reference/{name}.csv',keys)
-    write_json(output/'AUDIT_STATUS.json',{'status':'passed','evidence_checksums':len(checks),'reference_tables_checked':verify,'all_nonerror_verdicts_rechecked':len(raw)-error_count,'scientific_comparison_valid':valid,'post_study_replacement':followup,'new_model_inference':False,'interpretation':'A reused-panel post-study follow-up is descriptive even when its execution has no serving errors.' if followup else 'Original frozen eligibility rule retained.'})
+    write_json(output/'AUDIT_STATUS.json',{'status':'passed','evidence_checksums':len(checks),'reference_tables_checked':verify,'all_nonerror_verdicts_rechecked':len(raw)-error_count,'planned_call_membership':membership,'scientific_comparison_valid':valid,'post_study_replacement':followup,'new_model_inference':False,'interpretation':'A reused-panel post-study follow-up is descriptive even when its execution has no serving errors.' if followup else 'Original frozen eligibility rule retained.'})
     return summary
 
 if __name__=='__main__':

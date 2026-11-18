@@ -13,8 +13,13 @@ jobs:
           cache: pip
       - run: python -m pip install -r requirements.txt
       - run: make test
-      - run: make verify
+      - name: Verify original cohort
+        run: make verify-original
+      - name: Verify replacement cohort and supplement
+        run: make verify-replacement
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: recomputed-audit
-          path: results/recomputed/
+          path: |
+            results/recomputed/
+            results/replacement/

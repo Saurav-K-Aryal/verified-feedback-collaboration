@@ -10,10 +10,10 @@ The exported raw responses and exact tasks allow the reported correctness claims
 
 ## Separate follow-up bundles
 
-`artifact.study` accepts a complete separate evidence bundle with `data/`, `provenance/`, and `results/reference/` subdirectories. It rechecks every certificate, reconstructs all development and test portfolios, rederives development selection and the original difficulty gate, and recomputes tables without fixing model names or physical-call counts. Its output must be separate from the input bundle. For a bundled follow-up, the interface is:
+`artifact.study` accepts a complete separate evidence bundle with `data/`, `provenance/`, and `results/reference/` subdirectories. It rechecks every certificate, reconstructs all development and test portfolios, independently derives their exact ordered candidate memberships and the complete union of physical calls, checks task/phase/model/seed identities and model digests, and rederives development selection and the original difficulty gate. It recomputes tables without fixing model names or physical-call counts. Its output must be separate from the input bundle. For a bundled follow-up, the interface is:
 
 ```sh
 python -m artifact.study --study studies/model_replacement --output results/replacement --verify
 ```
 
-This command requires the indicated completed study bundle. The original audit remains `make verify`. A model-replacement follow-up on the already observed task panel must be labeled `post_study_replacement` in its provenance and remains descriptive even if it has no serving errors. It does not replace the original records, erase their error, or become an independent confirmation.
+The completed bundle is included. `make verify` checks both cohorts; the original-only command is `make verify-original`. A model-replacement follow-up on the already observed task panel must be labeled `post_study_replacement` in its provenance and remains descriptive even if it has no serving errors. It does not replace the original records, erase their error, or become an independent confirmation.

@@ -1,0 +1,53 @@
+{
+  "scope": "Post hoc comparison conditional on exact request payload, model digest and server identity shared by original and replacement runs. Not independent model replication or a test of changed strategies. Feedback matches are selected by having identical prior-context payloads.",
+  "rows": [
+    {
+      "model": "qwen3.5:4b",
+      "request_kind": "independent",
+      "new_requests_in_kind": 400,
+      "exact_identity_matches": 400,
+      "text_equal": 272,
+      "acceptance_equal": 392,
+      "both_correct": 52,
+      "old_only_correct": 4,
+      "new_only_correct": 4,
+      "both_incorrect": 340
+    },
+    {
+      "model": "qwen3.5:4b",
+      "request_kind": "feedback",
+      "new_requests_in_kind": 448,
+      "exact_identity_matches": 130,
+      "text_equal": 114,
+      "acceptance_equal": 130,
+      "both_correct": 38,
+      "old_only_correct": 0,
+      "new_only_correct": 0,
+      "both_incorrect": 92
+    },
+    {
+      "model": "gemma4:12b",
+      "request_kind": "independent",
+      "new_requests_in_kind": 912,
+      "exact_identity_matches": 912,
+      "text_equal": 329,
+      "acceptance_equal": 858,
+      "both_correct": 206,
+      "old_only_correct": 22,
+      "new_only_correct": 32,
+      "both_incorrect": 652
+    },
+    {
+      "model": "gemma4:12b",
+      "request_kind": "feedback",
+      "new_requests_in_kind": 1216,
+      "exact_identity_matches": 469,
+      "text_equal": 420,
+      "acceptance_equal": 464,
+      "both_correct": 358,
+      "old_only_correct": 2,
+      "new_only_correct": 3,
+      "both_incorrect": 106
+    }
+  ]
+}

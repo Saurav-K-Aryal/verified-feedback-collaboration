@@ -1,0 +1,30 @@
+{
+  "prompt_tokens": {
+    "sum_observed": 4942530,
+    "missing_calls": 0
+  },
+  "output_tokens": {
+    "sum_observed": 369437,
+    "missing_calls": 0
+  },
+  "wall_seconds": {
+    "sum_observed": 7151.4781410043215,
+    "missing_calls": 0
+  },
+  "total_seconds": {
+    "sum_observed": 7142.024220283,
+    "missing_calls": 0
+  },
+  "eval_seconds": {
+    "sum_observed": 5386.008381976,
+    "missing_calls": 0
+  },
+  "prompt_eval_seconds": {
+    "sum_observed": 1720.540106453,
+    "missing_calls": 0
+  },
+  "load_seconds": {
+    "sum_observed": 19.231584118,
+    "missing_calls": 0
+  }
+}

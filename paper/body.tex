@@ -4,13 +4,15 @@ A verifier can reject a proposed answer without telling a model how to find a be
 
 We study these distinctions in two small domains where correctness is completely checkable: finding a directed path and synthesizing a Boolean expression from its full truth table. The domains deliberately remove uncertainty about answer evaluation. They also have efficient classical solutions, which we measure. The objective is to examine the behavior of model-based proposal and revision procedures, not to show that language models are needed to solve these tasks.
 
-The experiment compares three-call independent sampling, revision with only a validity flag, and revision with exact checker feedback. Each homogeneous strategy selects its model on a separate development panel. Two further controls use one call from each of three configured models, either independently or as a serial feedback trajectory. All methods have the same call count and completion-token cap. Token use and observed latency remain outcomes, rather than being assumed equal. A separate exact solver establishes the performance available from the public problem specification.
+The original experiment compares three-call independent sampling, revision with only a validity flag, and revision with exact checker feedback. Each homogeneous strategy selects its model on a separate development panel. Two further controls use one call from each of three configured models, either independently or as a serial feedback trajectory. All methods have the same call count and completion-token cap. Token use and observed latency remain outcomes, rather than being assumed equal. A separate exact solver establishes the performance available from the public problem specification.
 
-The study uses 48 development tasks and 256 test tasks, with fixed allocation across two families and three grades. A development gate checks that each family has an intermediate-performance region before test inference begins. The protocol, task manifest, selection rule, practical margin, and analysis code were frozen locally before the extension experiment. This was not a public preregistration. All scheduled observations were collected, and an independent analysis reconciled the raw responses, certificates, portfolio memberships, costs, and source fingerprints.
+The original study uses 48 development tasks and 256 test tasks, with fixed allocation across two families and three grades. A development gate checks that each family has an intermediate-performance region before test inference begins. The protocol, task manifest, selection rule, practical margin, and analysis code were frozen locally before the extension experiment. This was not a public preregistration. All scheduled observations were collected, and an independent analysis reconciled the raw responses, certificates, portfolio memberships, costs, and source fingerprints.
 
-Exact-feedback refinement solved 117 of 256 test tasks. Validity-only refinement solved 115, and independent sampling solved 78. The mixed-model refinement solved 106. Neither prespecified conservative interval establishes the required five-percentage-point advantage of exact feedback over both homogeneous controls. In addition, a serving abort in one secondary mixed-model trajectory activates the protocol's global exclusion rule. The main result is therefore a diagnostic comparison, not a confirmed superiority claim. The primary homogeneous trajectories contain no serving errors, and the interval criterion would still fail without that exclusion.
+In the original study, exact-feedback refinement solved 117 of 256 test tasks. Validity-only refinement solved 115, and independent sampling solved 78. The mixed-model refinement solved 106. Neither prespecified conservative interval establishes the required five-percentage-point advantage of exact feedback over both homogeneous controls. In addition, a serving abort in one secondary mixed-model trajectory activates the protocol's global exclusion rule. The main result is therefore a diagnostic comparison, not a confirmed superiority claim. The primary homogeneous trajectories contain no serving errors, and the interval criterion would still fail without that exclusion.
 
-The contribution is an auditable evaluation that separates revision, feedback detail, and model mixing under strong local controls. It documents a substantial observed difference between revision and fresh sampling, a much smaller difference between two feedback conditions, and pronounced task-family floors and ceilings. It also preserves an operational failure and its later diagnostic attempts without replacing the original outcome. These distinctions are useful precisely because a single aggregate improvement would conceal them.
+A post-study follow-up replaced Llama with Mistral throughout development and testing, collecting fresh responses from all retained configurations on the same task panel. It completed without serving errors. Development selected Mistral for sampling and validity feedback, but Gemma for exact feedback. The larger cross-configuration feedback contrast shrank substantially when compared with the same-Gemma validity control. This follow-up is descriptive because it reuses previously examined tasks; it neither replaces the original study nor supplies independent confirmation.
+
+The contribution is an auditable comparison of revision, feedback detail, and model mixing under strong local controls. Both studies retain task-family floors, ceilings, and operational outcomes that an aggregate improvement would conceal.
 
 \section{Related Work}
 
@@ -22,7 +24,7 @@ Multi-agent debate supplies another route to improved reasoning~\cite{du2024deba
 
 Counterexample-guided synthesis has a longer history of alternating candidate construction and verification~\cite{solarlezama2008sketching}. Replacing the synthesizer with a pretrained model does not make that loop new. Likewise, grammar-constrained decoding can enforce output syntax~\cite{park2025grammar}. This experiment uses strict parsing after unconstrained generation, not grammar-constrained decoding. Syntactic failures therefore remain part of the measured system behavior. We separate them from semantically incorrect, well-formed certificates, rather than interpreting every rejected output as a reasoning failure.
 
-\section{Tasks and Experimental Separation}
+\section{Original Task Panel and Experimental Separation}
 \label{sec:tasks}
 
 \subsection{Directed-path construction}
@@ -68,14 +70,14 @@ An earlier 48-test-task pilot exposed a graph ceiling and a Boolean floor. Those
 \section{Models, Strategies, and Resource Accounting}
 \label{sec:methods}
 
-\subsection{Configured local systems}
+\subsection{Original configured systems}
 
-We evaluated three installed model configurations through Ollama 0.40.13 on an Apple ARM64 laptop with 128~GiB of memory and 18 CPU cores. Table~\ref{tab:models} gives the local tags, recorded runner metadata, and digest prefixes. Sizes embedded in tags are identifiers, not independently verified parameter counts. Tokenizers, training exposure, quantization, and execution backends differ. The experiment therefore compares these configured systems, not architecture families under controlled training.
+The original study evaluated three installed model configurations through Ollama 0.40.13 on an Apple ARM64 laptop with 128~GiB of memory and 18 CPU cores. Table~\ref{tab:models} gives the local tags, recorded runner metadata, and digest prefixes. Sizes embedded in tags are identifiers, not independently verified parameter counts. Training exposure and tokenization are not controlled; recorded quantization and execution backends also differ. The experiment therefore compares these configured systems, not architecture families under controlled training.
 
 Every request explicitly used temperature 0.7, top-$p$ 0.9, repetition penalty 1.0, an 8,192-token context, a 512-token completion cap, and a recorded seed. Thinking was disabled where the server reported that capability. Other model-specific defaults were retained. Prompts request a single certificate and use the same public task data. There is no fine-tuning, parameter update, learned router, persistent memory, or external tool call by the model. Task and strategy order are deterministically shuffled to reduce simple ordering artifacts, but timing is not an isolated performance benchmark.
 
 \begin{table}[t]
-\caption{Installed configurations. Full digests and server metadata are preserved in the artifact. A dash means the metadata field was not reported.}
+\caption{Original installed configurations. Full digests and server metadata are preserved in the artifact. A dash means the metadata field was not reported.}
 \label{tab:models}
 \centering\small
 \begin{tabular}{llll}
@@ -89,7 +91,7 @@ Local tag & Runner & Quant. & Digest prefix\\
 \end{tabular}
 \end{table}
 
-\subsection{Five distinct three-call strategies}
+\subsection{Strategy families and matched controls}
 
 \textbf{Independent sampling (I).} A single configuration receives three fresh requests for the same task. Each request contains the format demonstration and public problem, with a distinct recorded seed. No generated candidate is supplied to another call.
 
@@ -108,7 +110,7 @@ for task $i$ and method $m$. Thus, a correct early answer survives a later unsuc
 
 \subsection{Selection and feasibility gate}
 
-Development evaluates I, V, and E separately for every configuration. Each strategy selects the configuration with the largest development solve count, breaking ties by the declared model order. The mixed refinement order sorts configurations by development E count, then I count, then declared order. These choices are frozen before test inference. We also retain I and V controls for E's selected configuration in case the strongest baseline selections differ. They happen to select the same configuration here, so these additional labels duplicate existing trajectories.
+Development evaluates I, V, and E separately for every configuration. Each strategy selects the configuration with the largest development solve count, breaking ties by the declared model order. The mixed refinement order sorts configurations by development E count, then I count, then declared order. These choices are frozen before test inference. We also retain I and V controls for E's selected configuration in case the strongest baseline selections differ. They select the same configuration in the original study, so these additional labels duplicate original trajectories. The follow-up in Section~\ref{sec:replacement} selects different configurations, making the matched controls distinct.
 
 The development gate requires no request errors, at least half of candidate outputs to be syntactically well formed in each family, and an intermediate-performance cell in each family. The last condition means that at least one prespecified selected strategy must solve between one and seven of eight tasks in at least one grade of that family. A failed gate would preserve diagnostics and skip test inference. Passing does not permit dropping easy or difficult test grades. All six strata remain in the primary denominator.
 
@@ -120,7 +122,7 @@ Matching three calls and their completion caps does not match prompt length, emi
 
 Two public-input algorithms provide exact baselines. Breadth-first search finds a graph path. For Boolean synthesis, a balanced disjunctive normal form represents the smaller truth-table class, using an outer negation when appropriate. These expressions satisfy the checker limits. Their certificates never enter test prompts. Both methods solve the actual supplied problem without consulting a stored reference answer. Their timing includes proposal construction and verification, and is reported separately from model-server latency.
 
-\section{Prespecified Analysis}
+\section{Original Prespecified Analysis}
 \label{sec:analysis}
 
 The experimental unit is a task instance with paired strategy outcomes. The primary estimand is the difference in solve probability for E versus each of the development-selected I and V baselines, weighted by the fixed six-stratum allocation. We do not treat individual candidates, model turns, duplicate control labels, or the three configurations as independent experimental replications.
@@ -141,7 +143,7 @@ The practical superiority criterion requires \emph{both} lower limits to exceed 
 
 The protocol also specifies that any request error prevents scientific superiority inference. Wrong, malformed, truncated, and unfinished candidates remain observed failures, while serving errors are separately classified and retain their measured wall cost. An interrupted schedule would leave missing observations missing. This strict operational gate applies globally, including secondary trajectories. We report the planned intervals even when the gate is triggered, but do not reinterpret them as an eligible confirmatory analysis.
 
-\section{Results}
+\section{Original Frozen-Study Results}
 \label{sec:results}
 
 \subsection{Development selection and gate}
@@ -155,7 +157,7 @@ The gate passed, but only weakly for Boolean tasks. Graph grade 0 was already at
 Table~\ref{tab:outcomes} reports the five unique three-call methods and two distinct-budget references. E solved 117 tasks, V solved 115, and I solved 78. The observed E--I difference is 39/256, or 15.23 percentage points. All 39 discordant tasks favored E. The conservative interval is nevertheless $[-8.14,34.46]$ percentage points because of the prespecified stratum-wise construction. E--V has four favorable and two unfavorable discordant tasks, giving a difference of 0.78 points and interval $[-16.44,18.01]$. Neither lower limit exceeds five points (Figure~\ref{fig:primary}).
 
 \begin{table}[t]
-\caption{Observed test outcomes. All rows use the same 256 tasks. The one-call row reuses an existing candidate and is secondary; the exact solver has a different computational procedure. Duplicate matched-control labels are omitted.}
+\caption{Original test outcomes. All rows use the same 256 tasks. The one-call row reuses an existing candidate and is secondary; the exact solver has a different computational procedure. Duplicate matched-control labels are omitted.}
 \label{tab:outcomes}
 \centering\small
 \begin{tabular}{lrrr}
@@ -177,7 +179,7 @@ Public-input exact solver & 0 & 256 & 100.00\\
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/topic3_primary_comparisons.pdf}
-\caption{Prespecified paired differences and conservative 97.5\% intervals. The five-point margin must be exceeded by both lower bounds. Neither comparison passes. The intervals retain the frozen analysis despite the study's separate global serving-error exclusion; they are not a repaired confirmatory result.}
+\caption{Original prespecified paired differences and conservative 97.5\% intervals. The five-point margin must be exceeded by both lower bounds. Neither comparison passes. The intervals retain the frozen analysis despite the study's separate global serving-error exclusion; they are not a repaired confirmatory result.}
 \Description{Two horizontal confidence intervals compare exact feedback with independent sampling and validity feedback. Both cross zero and the five-percentage-point threshold.}
 \label{fig:primary}
 \end{figure*}
@@ -191,7 +193,7 @@ MI solved 88 tasks, ten more than homogeneous I. ME solved 106, eighteen more th
 Table~\ref{tab:strata} shows the mechanism's uneven operating region. E solved 112/128 graph tasks and 5/128 Boolean tasks. V also solved 112 graph tasks, with only three Boolean successes. On graph grade 2, both feedback methods solved 32/42 tasks versus 8/42 for I. On the easiest graph grade, almost every method was near ceiling. Boolean grade 1 remained at zero across every strategy; grade 2 had one E success and none for the other four methods.
 
 \begin{table}[t]
-\caption{Solved tasks by fixed family and grade. Columns abbreviate the five strategies defined in Section~\ref{sec:methods}. Counts, rather than candidate-level rates, preserve the task as the experimental unit.}
+\caption{Original solved tasks by fixed family and grade. Columns abbreviate the five strategies defined in Section~\ref{sec:methods}. Counts, rather than candidate-level rates, preserve the task as the experimental unit.}
 \label{tab:strata}
 \centering\small
 \begin{tabular}{llrrrrrr}
@@ -229,7 +231,7 @@ Figure~\ref{fig:cost} compares the observed quality and charged request wall tim
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/topic3_quality_cost.pdf}
-\caption{Observed solve rates and mean charged request wall seconds for the five unique three-call strategies. Counts are over all 256 test tasks; wall time includes the failed request. Timing describes the observed laptop workload and shared-candidate accounting, including available loading costs and uncontrolled background activity. Equal calls and completion caps do not imply equal FLOPs or isolated latency.}
+\caption{Original observed solve rates and mean charged request wall seconds for the five unique three-call strategies. Counts are over all 256 test tasks; wall time includes the failed request. Timing describes the observed laptop workload and shared-candidate accounting, including available loading costs and uncontrolled background activity. Equal calls and completion caps do not imply equal FLOPs or isolated latency.}
 \Description{Aligned horizontal bar charts show solve rates and mean charged request wall time. Homogeneous exact feedback has the highest observed solve count, while mixed strategies have shorter observed wall times.}
 \label{fig:cost}
 \end{figure*}
@@ -238,15 +240,63 @@ Mean charged prompt/output tokens were 2,840/424 for I, 3,183/319 for V, 3,226/3
 
 The public-input exact algorithms solved all 256 tasks. Mean proposal time was 3.90 microseconds, and mean verification time was 38.29 microseconds. These small CPU measurements describe this implementation and task scale; they are not a hardware-normalized comparison with a model server. Even so, the existence of cheap exact algorithms decisively limits practical claims. The model results concern a proposal-and-feedback mechanism on finite tasks, not superiority over the strongest available solver.
 
+\section{Full-Panel Model-Substitution Follow-Up}
+\label{sec:replacement}
+
+\subsection{Separate protocol and selection}
+
+Following the original serving abort and the one-task diagnostics, we defined a full follow-up replacing \texttt{llama3.1:8b} with \texttt{mistral-small3.2:24b}. The latter used a GGML runner, recorded Q4\_K\_M quantization, and model digest prefix \texttt{5a408ab55df5}. Qwen and Gemma retained their original digests, and the server version was unchanged. All three configurations received fresh requests in a new response cache. No original response was imported.
+
+The follow-up reused the identical 48 development and 256 test tasks, prompt templates, verifier, call caps, and model-selection rules. Actual revision prompts depended on the newly generated previous candidates. Its amendment was frozen before new inference. The development gate was recorded but declared non-stopping so the entire panel would be collected even if the gate failed. All comparisons were designated descriptive because the panel had already been examined. The gate passed, and all 4,848 scheduled physical requests completed without serving errors or response-cache hits. The original observations and exclusion decision remain unchanged.
+
+Development I/V/E counts were 10/11/9 for Qwen, 17/18/16 for Mistral, and 14/18/19 for Gemma, each out of 48. Mistral therefore supplied the selected I and V baselines; its validity tie with Gemma was resolved by the declared order. Gemma supplied E. The mixed sequence became Gemma, Mistral, then Qwen. Unlike the original study, all seven allocations were distinct: the selected baselines and Gemma's matched controls could not be collapsed.
+
+\subsection{Outcomes, controls, and costs}
+
+Table~\ref{tab:replacement} reports every allocation. Gemma E solved 115 tasks, compared with 96 for Mistral I and 88 for Mistral V. The retained primary-form differences were 7.42 percentage points with a 97.5\% interval of $[-15.97,28.72]$, and 10.55 points with interval $[-14.85,32.88]$, respectively. Neither lower bound exceeded five points. These remain descriptive bounds, not a second eligible primary analysis.
+
+\begin{table}[t]
+\caption{Separate model-substitution follow-up. Each row uses three calls on the same 256 tasks. G and B count solves among 128 graph and 128 Boolean tasks; $s$ is mean charged request wall seconds. Timing remains descriptive.}
+\label{tab:replacement}
+\centering\small\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrr}
+\toprule
+Allocation & G & B & Total & $s$\\
+\midrule
+Mistral independent & 90 & 6 & 96 & 6.167\\
+Mistral validity & 84 & 4 & 88 & 6.557\\
+Gemma exact feedback & 112 & 3 & 115 & 4.151\\
+Mixed independent & 92 & 3 & 95 & 4.718\\
+Mixed exact feedback & 109 & 2 & 111 & 4.754\\
+Gemma independent control & 79 & 2 & 81 & 4.342\\
+Gemma validity control & 110 & 1 & 111 & 3.769\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The same-configuration controls change the interpretation. Gemma's validity portfolio solved 111 tasks, leaving an E--V difference of only four tasks, or 1.56 points, with a descriptive 95\% interval of $[-14.89,17.67]$. The 27-task difference against selected Mistral V therefore cannot be attributed to feedback detail alone. Gemma E exceeded its matched independent control by 34 tasks, or 13.28 points, with interval $[-8.22,31.30]$. The selection rule was not revised after observing that Gemma V outperformed selected Mistral V on test. Mistral V also solved fewer tasks than Mistral I, so revision was not uniformly beneficial across configurations.
+
+Mixed refinement solved 111 tasks, below Gemma E's 115; mixed independent sampling solved 95, compared with Mistral I's 96. The secondary reused Mistral first call solved 73. Boolean performance remained near floor: no allocation solved a grade-1 Boolean task, and at most two grade-2 tasks were solved by any allocation. The unchanged exact baseline solves all 256 identical tasks; its previously reported timing is not a new measurement in this follow-up.
+
+The run comprised 1,008 development and 3,840 test calls. Selection differences required 15 distinct physical calls per test task, while each logical portfolio retained its three-call cap. Recorded usage was 4,942,530 prompt tokens and 369,437 output tokens, with no missing usage fields. Request wall times summed to 7,151.48 seconds; stage elapsed time was approximately 119.4 minutes. The follow-up used both different configurations and more distinct physical calls than the original experiment. These totals are not a matched-work estimate of the cost of substituting one model.
+
+\subsection{Exploratory repeatability of retained requests}
+
+A post hoc audit matched requests across runs using the complete recorded payload, model digest, and server identity. Across development and test, all 1,312 independently prompted Qwen/Gemma requests found exact matches. Raw text agreed in 601 cases and verifier acceptance in 1,250. Among 599 feedback requests with matching prior-context payloads, text agreed in 534 and acceptance in 594. The feedback subset is conditioned on identical contexts, and requests sharing a task are not independent task replications.
+
+These observations show that fixed tags, digests, request options, and seeds did not ensure identical served outputs in this setup. They do not identify the cause of the variation. Consequently, aggregate changes between the two studies cannot be assigned solely to the model substitution. The follow-up supplies a separate configuration comparison with fresh responses, not an independent task sample or a repair of the original inference gate.
+
 \section{Discussion and Limitations}
 
 \subsection{What the comparisons establish}
 
-The strongest defensible observation is the separation between the two feedback comparisons. Exact-feedback refinement has substantially more observed successes than fresh independent sampling, yet nearly the same total as validity-only refinement. Evaluating only the first contrast would attribute to detailed verification information an improvement also obtained by a simpler revision procedure. The second contrast supplies a necessary control, although its interval is too wide to resolve a small effect.
+In the original study, the central observation is the separation between the two feedback comparisons. Exact-feedback refinement has substantially more observed successes than fresh independent sampling, yet nearly the same total as validity-only refinement. Evaluating only the first contrast would attribute to detailed verification information an improvement also obtained by a simpler revision procedure. The second contrast supplies a necessary control, although its interval is too wide to resolve a small effect.
 
-Mixed independent sampling provides some additional verified coverage compared with the selected homogeneous independent portfolio. Serial cross-model feedback does not convert that coverage into an observed advantage over the strongest homogeneous refinement. This may reflect unequal model capabilities, an unhelpful handoff order, shared blind spots, prompt sensitivity, or the small call budget. The experiment cannot distinguish those explanations. In particular, it does not manipulate architecture diversity independently of training data, scale, quantization, or backend.
+Original mixed independent sampling provides some additional verified coverage compared with the selected homogeneous independent portfolio. Serial cross-model feedback does not convert that coverage into an observed advantage over the strongest homogeneous refinement. This may reflect unequal model capabilities, an unhelpful handoff order, shared blind spots, prompt sensitivity, or the small call budget. The experiment cannot distinguish those explanations. In particular, it does not manipulate architecture diversity independently of training data, scale, quantization, or backend.
 
-The failure case also separates three questions: whether the server returned a candidate, whether that candidate was well formed, and whether it was correct. Repeating the failed request did not produce a candidate. Substituting another model produced a checkable but wrong expression. Treating either intervention as an automatic recovery would confuse operational completion with semantic success.
+The follow-up reinforces the need to distinguish model selection from feedback information. A larger difference against the development-selected validity baseline coexists with a four-task difference against the same-Gemma validity control. Its mixed procedures again fail to exceed the best observed homogeneous exact-feedback count, but their rankings and costs are specific to these configurations. Neither study establishes a general collaboration advantage or a general failure of collaboration.
+
+The one-task failure diagnostics also separate three questions: whether the server returned a candidate, whether that candidate was well formed, and whether it was correct. Repeating the failed request did not produce a candidate. Substituting Mistral on that request produced a checkable but wrong expression. Treating either intervention as an automatic recovery would confuse operational completion with semantic success.
 
 \subsection{What remains untested}
 
@@ -254,18 +304,18 @@ The task panel is intentionally narrow. Graphs have known finite structure and a
 
 The panel also retains substantial ceilings and floors. The Boolean condition has too few successes to characterize feedback behavior reliably across its higher grades. Strict output checking combines format compliance and semantic ability at the system level. Grammar-constrained generation could remove some format failures, but that would define a different protocol and needs fresh development and test data. The unchanged retrospective normalization result cannot stand in for that experiment.
 
-The three configured systems are a fixed convenience pool, with no repeated model training or independently sampled architecture families. A single seeded response per scheduled position gives task-level replication, not replication over model initialization or repeated deployment. Backend nondeterminism may remain despite fixed seeds. The observed temporal costs include shared execution context and background activity, and token counts are tokenizer-dependent.
+The four configurations form fixed convenience pools, with no repeated training or independently sampled architecture families. Each run records one seeded response per scheduled position; neither samples a population of deployments. Fixed seeds do not ensure identical served text. Timing includes shared execution context and background activity, and token counts are tokenizer-dependent.
 
-Finally, the frozen intervals are conservative and the global request-error rule is strict. Both reduce the study's ability to make a positive primary claim. They were retained because altering them after results would change the target analysis. A future study can choose a more efficient prespecified paired procedure and an explicit operational-failure estimand. It should also require a larger intermediate-performance region in development, include matched no-message or sham-feedback controls if a causal communication claim is intended, and separate syntactic constraints from semantic feedback. Such changes would require new observations rather than reinterpretation of this panel.
+The original conservative intervals and global request-error rule reduce the ability to establish superiority; changing them after observing results would change the analysis. The error-free follow-up remains descriptive because it reuses examined tasks. Future work should prespecify a more efficient paired procedure and operational-failure estimand, require a broader intermediate-performance region, separate syntax constraints from semantic feedback, and include no-message or sham-feedback controls for causal communication claims. Those changes require new observations.
 
 \section{Reproducibility and Artifact Scope}
 
-The accompanying release candidate contains the frozen task manifest, response records, portfolio memberships, checker and analysis source, task-construction specification, model and server metadata, selection decisions, development gate, resource ledger, and analysis outputs. Its portable audit regenerates task-level verdicts and reconciles them with stored results before producing tables and figures. The artifact is private during preparation; no public release or external artifact evaluation is claimed here.
+The accompanying release candidate keeps the original and replacement evidence separate, with the frozen task manifest, response records, portfolio memberships, checker and analysis source, task-construction specification, model and server metadata, selection decisions, development gates, resource ledgers, and analysis outputs. Its portable audit regenerates task-level verdicts and reconciles them with stored results before producing tables and figures. The artifact is private during preparation; no public release or external artifact evaluation is claimed here.
 
-Source and data fingerprints distinguish the original extension from final analysis and later amendments. The extension source digest begins \texttt{845d06f30456}; the legacy checker begins \texttt{04ee69f54923}. Full SHA-256 values accompany the records. An independent analysis found no disagreements in certificates, memberships, selection, gate decisions, counts, cost means, or primary bounds. It also checked that protected source inputs had not changed. Audit code includes malformed-certificate, interval-boundary, missing-call, and duplicate-identifier checks.
+Source and data fingerprints distinguish the original extension from final analysis and later amendments. The original extension source digest begins \texttt{845d06f30456}; the replacement extension begins \texttt{4a1d60587099}; the shared checker begins \texttt{04ee69f54923}. Full SHA-256 values accompany the records. An independent analysis found no disagreements in certificates, memberships, selection, gate decisions, counts, cost means, or primary bounds. It also checked that protected source inputs had not changed. Audit code includes malformed-certificate, interval-boundary, missing-call, and duplicate-identifier checks.
 
-Recomputing this paper's tables requires no new model calls. Reproducing generation is a distinct operation requiring the pinned local configurations, server behavior, and complete prompting/controller environment retained in the original execution archive. The portable repository audits the included evidence; it does not supply a turnkey generation rerun. Identical text is not guaranteed merely by matching a seed. Raw physical usage is kept separate from logical portfolio charges. The first-call secondary reference is explicitly a reused observation, and duplicate matched-control labels are identified. The original serving error, the one exact-payload retry, and the alternative-model diagnostic each retain separate provenance. None silently fills a missing token field or changes an original verdict.
+Recomputing this paper's tables requires no new model calls. Reproducing generation is a distinct operation requiring the pinned local configurations, server behavior, and complete prompting/controller environment retained in the original execution archive. The portable repository audits the included evidence; it does not supply a turnkey generation rerun. Identical text is not guaranteed merely by matching a seed. Raw physical usage is kept separate from logical portfolio charges. The first-call secondary reference is explicitly a reused observation, and duplicate matched-control labels are identified. The original serving error, the one exact-payload retry, the one-task alternative-model diagnostic, and the full substitution follow-up each retain separate provenance. None silently fills a missing token field or changes an original verdict.
 
 \section{Conclusion}
 
-On this finite exact-checker panel, exact-feedback refinement solved 117/256 tasks, compared with 115/256 for validity-only refinement, 78/256 for independent sampling, and 106/256 for mixed-model refinement. The planned superiority criterion was not met, and an original serving abort independently excludes a confirmatory claim. Classical algorithms solved every task. The useful result is a controlled and reproducible account of where the observed improvements occur: revision helps on many graph instances, richer diagnostics add little to the aggregate count, and Boolean synthesis remains largely at floor. Future claims about verifier-guided collaboration need to separate these mechanisms before scaling the procedure or broadening its scientific interpretation.
+In the original study, exact-feedback refinement solved 117/256 tasks, versus 115 for validity-only refinement, 78 for independent sampling, and 106 for mixed refinement. Its superiority criterion was not met, and a serving abort separately excluded confirmation. A full model-substitution follow-up completed without errors on the same panel: Gemma exact feedback solved 115 tasks, selected Mistral validity solved 88, and matched Gemma validity solved 111. The smaller same-configuration contrast prevents attributing the larger cross-model difference to feedback alone. Mixed refinement solved 111, and exact classical algorithms solve every task. Both studies retain a substantial Boolean floor. The evidence supports careful separation of revision, diagnostic detail, model selection, served-output repeatability, and resource use before broader claims about verifier-guided collaboration.

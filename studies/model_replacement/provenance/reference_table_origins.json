@@ -1,0 +1,8 @@
+{
+  "scope": "Independent replacement-study audit tables, not copied from portable recomputation.",
+  "sha256": {
+    "method_results.csv": "d8648662780bd784bdbf7a6aa14af8c81ebb1abb1aa87fa86c466e34f347a11f",
+    "family_grade_results.csv": "514f9fab23fb51f94c79d3f4be1f6195bcd285ce031c901a987c57692aa0ed65",
+    "primary_comparisons.csv": "ef4da3fa58a191b0ef59b005ef50b0115a4304755aae6cceebeff8e25dd116e4"
+  }
+}

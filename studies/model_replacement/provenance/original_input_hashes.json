@@ -1,0 +1,18 @@
+{
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3/DEVELOPMENT_GATE.json": "37f071832b0551048f489a06d42b7795aa6ee2af05227eb094c168ed9dc4b633",
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3/DEVELOPMENT_PORTFOLIOS.json": "7af0e6834c309f3c090e462b282e0659ceb1ff2a7bc086b027d677ffe6c42a27",
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3/DEVELOPMENT_SELECTION.json": "820997edc7fc0576eed168aecab11e6d9cb43526db82351aea032b8ef706c19b",
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3/EXACT_SOLVER_BASELINE.json": "e4b5c8678dde4d2a746886ab0ec00852fd847194d6ad036656a65426bd3431c0",
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3/PORTFOLIOS.json": "32d0287c0fb190c5a575efd846da5ea054619898fd69710c3e6628d860f78158",
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3/PROTOCOL.json": "213e4ea711b56dbb68fffa9c4decd74787edb6048b7245936585aed397176741",
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3/PROTOCOL.sha256": "f49ace53a92a0025007eae45fd66c420a7b4102f7c2f13e0780d70c0aff0b91a",
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3/RESULTS.txt": "40d721cac94e09b85d8aae422c59d25da737f42ee45447542cc4ed40b2b5b7a2",
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3/RETROSPECTIVE_DIAGNOSTIC.json": "8df33031824b5440df6e1852dc639665394174b280e8f32fd395a26bbf3d342a",
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3/RUN_CONTEXT.json": "030c96d640ffea0e8cd0911827d24ac8c1df9a4b170e439acef120b5315d8001",
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3/TASK_MANIFEST.json": "13a2780977d490d0c96a5cd3094c7e0d7972a09933053482f0d27bb384086bb3",
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3/portfolio_results.csv": "b6255644c8db9fa24b449b58652456913463a0dee8cc0808d3f9a1a3336b20f4",
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3/raw_calls.jsonl": "ed2e82ec4d5587a4029e157a3a6e392e29c402775edf42de0fd1af0ade1bb7fb",
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3/source_snapshot.py": "845d06f304566a81229cf91f5cbe576c7cba0f7b029c5f00ba423eb219d7ba1e",
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3/summary.json": "66be42649779242e4f129cac762a7f99d0f62ebd552460e1113bf8cbd739b518",
+  "outputs/pilot_extensions/runs/20261118T030136Z_full/topic3_STATUS.json": "684c71995ecb0ed1be779131ddb270ceb70c4155340d02f2c77d87baf291aa0c"
+}

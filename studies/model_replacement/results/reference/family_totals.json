@@ -1,0 +1,86 @@
+[
+  {
+    "family": "directed_path",
+    "method": "best_independent3",
+    "n": 128,
+    "solved": 90
+  },
+  {
+    "family": "directed_path",
+    "method": "best_validity3",
+    "n": 128,
+    "solved": 84
+  },
+  {
+    "family": "directed_path",
+    "method": "best_counterexample3",
+    "n": 128,
+    "solved": 112
+  },
+  {
+    "family": "directed_path",
+    "method": "mixed_independent3",
+    "n": 128,
+    "solved": 92
+  },
+  {
+    "family": "directed_path",
+    "method": "mixed_counterexample3",
+    "n": 128,
+    "solved": 109
+  },
+  {
+    "family": "directed_path",
+    "method": "matched_independent3",
+    "n": 128,
+    "solved": 79
+  },
+  {
+    "family": "directed_path",
+    "method": "matched_validity3",
+    "n": 128,
+    "solved": 110
+  },
+  {
+    "family": "boolean_program",
+    "method": "best_independent3",
+    "n": 128,
+    "solved": 6
+  },
+  {
+    "family": "boolean_program",
+    "method": "best_validity3",
+    "n": 128,
+    "solved": 4
+  },
+  {
+    "family": "boolean_program",
+    "method": "best_counterexample3",
+    "n": 128,
+    "solved": 3
+  },
+  {
+    "family": "boolean_program",
+    "method": "mixed_independent3",
+    "n": 128,
+    "solved": 3
+  },
+  {
+    "family": "boolean_program",
+    "method": "mixed_counterexample3",
+    "n": 128,
+    "solved": 2
+  },
+  {
+    "family": "boolean_program",
+    "method": "matched_independent3",
+    "n": 128,
+    "solved": 2
+  },
+  {
+    "family": "boolean_program",
+    "method": "matched_validity3",
+    "n": 128,
+    "solved": 1
+  }
+]
