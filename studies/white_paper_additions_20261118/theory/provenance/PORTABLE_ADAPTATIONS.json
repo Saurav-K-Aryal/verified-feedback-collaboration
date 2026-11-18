@@ -1,0 +1,16 @@
+{
+  "scientific_entrypoint_unchanged": "t3b.py",
+  "portable_adaptations": {
+    "common.py": "Removed private DECISIONS.json and wall-clock coordination requirements. Explicit command execution starts a new locally frozen run. Scientific procedures are unchanged. Its documentation refers only to this study.",
+    "validate.py": "Target-specific numerical checks only. No full scientific rerun is required to validate this packaging change.",
+    "protocol_template": "Removed historical not-before timestamp and added portable execution note. Scientific parameters are unchanged."
+  },
+  "archived_results": "Original frozen protocol and aggregate results retained unchanged. FREEZE.json records hashes of the original implementation; portable adapter hashes are listed separately.",
+  "historical_execution_context": "The archived not-before timestamp was the default end of a user-response window. An explicit start instruction ended that window at 2026-11-18T19:26:03 UTC, before the 19:27 UTC runs. The original execution guard accepted that explicit-start record. This changed scheduling only, not scientific parameters or data selection.",
+  "excluded": [
+    "raw source prose",
+    "private decisions",
+    "local runtime paths",
+    "raw Monte Carlo replicate file"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "validated_utc": "2026-11-18T19:43:51.688361+00:00",
+  "scope": "Post-result software checks, not a new scientific run",
+  "cases": [
+    {
+      "branching": 2,
+      "depth": 8,
+      "mass": "1/2",
+      "topology": "terminal",
+      "expansions": 16,
+      "rank_floor": 16,
+      "L": "2048"
+    },
+    {
+      "branching": 2,
+      "depth": 8,
+      "mass": "1/2",
+      "topology": "full",
+      "expansions": 510,
+      "rank_floor": 16,
+      "L": "2048"
+    },
+    {
+      "branching": 2,
+      "depth": 8,
+      "mass": "0",
+      "topology": "full",
+      "expansions": 8,
+      "rank_floor": 8,
+      "L": "8"
+    },
+    {
+      "branching": 4,
+      "depth": 6,
+      "mass": "4/5",
+      "topology": "full",
+      "expansions": 5460,
+      "rank_floor": 24,
+      "L": "93750"
+    }
+  ],
+  "source_sha256": {
+    "t3b.py": "8e8b54ace9c1e16e88fddd338884691e5707af7e840020ebe2c220cf0b9bb6ff",
+    "common.py": "cdf54fb3c3a054a2716c9d102b241f0ea79d0c332605a070096e2b86aeda2c63",
+    "validate.py": "def450bb999bdd58fb005c5dcdea4a1a2a1d9018f43b9287e82827fbb460bcf4"
+  }
+}

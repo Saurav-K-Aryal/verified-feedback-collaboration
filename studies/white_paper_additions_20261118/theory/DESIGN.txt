@@ -1,0 +1,57 @@
+T3 B conventions and finite bounds
+
+The tree has edge depth d, root depth zero, a single goal at depth D,
+and no duplicate state cuts. Every edge is valid. At each goal-spine
+node the correct action has probability p=1-m. Its other actions
+receive total mass m and cannot reach the goal. Conditional probabilities
+on full wrong subtrees are uniform. Terminal alternatives end immediately.
+The concentrated split gives 90 percent of wrong mass to one alternative
+and the remaining 10 percent equally to the others. For branching two,
+the two splits coincide and only one copy is evaluated.
+
+Search orders by exact rational d/pi, then lexicographic action sequence.
+The correct action has the largest label. The goal is tested when popped.
+The counted cost C excludes the root and includes the goal. Zero probability
+nodes are never popped. R sums each correct step's rank, including earlier
+action labels at equal probability. L=D/pi(goal).
+
+Rank proof. Every higher probability sibling of a correct path node has
+strictly lower search priority at equal depth. Every equal probability
+sibling with a smaller action label wins the deterministic tie. Those
+siblings and all correct path nodes must be popped before the goal.
+These nodes are distinct across levels, proving R<=C.
+
+Upper bound proof. The popped tree at goal termination is prefix closed.
+Cover its non-root nodes by paths to its leaves, giving C<=sum_leaf d(leaf).
+Monotonic search priority gives d(leaf)<=L*pi(leaf). Leaf prefixes are
+disjoint, so their probabilities sum to at most one. Hence C<=L.
+Counting the root instead gives C_total=C+1<=L+1. This explicit convention
+avoids ambiguities between edge depth and node count in the original paper.
+The external reference is Orseau et al., NeurIPS 2018, Theorem 3.
+https://proceedings.neurips.cc/paper/2018/file/52c5189391854c93e8a0e1326e56c14f-Paper.pdf
+
+The primary grid contains 640 exact deterministic cells, maximum full tree
+size 87381 nodes. No sampling confidence interval applies. A mass sweep
+also changes p and L. Fixed mass topology and allocation contrasts instead
+hold path probabilities and L fixed. The topology comparison at binary
+depth eight and mass one half is an algebraic check expected to yield
+R=16, L=2048, C=16 for terminal wrong branches and C=510 for full subtrees.
+This expectation was derived before enumeration. Any mismatch is a bug or
+a convention failure, not a reason to alter the frozen design.
+Finite staircase changes cannot establish an asymptotic phase transition.
+
+For a full tree with uniform wrong branch splitting there is an exact
+finite full-scan crossover at m=1-1/b. At equality the entire policy is
+uniform and the goal is the final lexicographic leaf. Above equality,
+every wrong action on the spine has probability greater than p and every
+off-spine continuation has probability 1/b>p, so every non-goal leaf has
+probability greater than the goal's probability. All nodes are then popped.
+Below equality the goal's last wrong sibling has lower probability than
+the goal and remains unpopped. All three crossover masses are in the frozen
+grid. Report the first tested full-scan mass at every depth and any mismatch
+with this elementary finite result. It is not an asymptotic phase transition.
+
+The earlier constructed search study concerned policy mixtures rather than
+this rank floor and dead end mass contrast.
+
+See README.md for portable execution commands.

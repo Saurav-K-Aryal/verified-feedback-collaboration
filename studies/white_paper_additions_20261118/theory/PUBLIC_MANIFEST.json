@@ -1,0 +1,24 @@
+{
+  "files_sha256": {
+    "DESIGN.txt": "f297e3e404ba6861cdb0018d930e70e654d7ae616e408338560fc2dc5411b7f0",
+    "README.md": "163187c59ff0a4bc6246ba1d75fda96611f563e3f7f25ce21d32e470f330c819",
+    "common.py": "cdf54fb3c3a054a2716c9d102b241f0ea79d0c332605a070096e2b86aeda2c63",
+    "provenance/ORIGINAL_SOURCE_SHA256.json": "9442e48cdf3cdcf5b8387493bd299abd3217b537d976d610315d719445ff22d8",
+    "provenance/PORTABLE_ADAPTATIONS.json": "d979a2b7b37c3a46a626e8d22e9dee6b1b92d2c2597a3f5b808173de61351728",
+    "provenance/PUBLIC_VALIDATION.json": "f314e056e9f5b1aca0b7fcb2083d70f7fc7b8669baebbe1d2bb702c3dc69dd1b",
+    "requirements.txt": "ea6b78cdab05ecac6163047b48e8fc41e24df7cf3787894bafcb1d0242abeff1",
+    "results/T3-B/FREEZE.json": "9343896a2c40fa2dc38c8e7b8b77d65d5c87a7f40a0e2d46faa032b6ecf6bde6",
+    "results/T3-B/PROTOCOL.json": "fd1ab33bec72065e5b682e72c0591e9ff38a8cecf698800ef95c458493ddaf04",
+    "results/T3-B/RESULT.md": "cb1859a2ce546a2cf67284583d03b0e4f556ad408ee21dc097adec9cd21dd712",
+    "results/T3-B/RUN_COMPLETE.json": "27a2408c90d9e49dc69584f854e8d59d4e6c1bd04b009d45e768251ac56426a7",
+    "results/T3-B/exact_cells.csv": "b49b44fbb26ddb84605e511d1d074e25102a0d40df823615e74d0ea8c20fc523",
+    "results/T3-B/summary.json": "5212ae469ff7742c6d913174fd6a93afcf658422f36884de5fcf27f9d151fa17",
+    "t3b.py": "8e8b54ace9c1e16e88fddd338884691e5707af7e840020ebe2c220cf0b9bb6ff",
+    "t3b_protocol.json": "8fb4c2ccd5bfc0505901edfd8ad239e41faf2adbc74671d52289b552317e85e6",
+    "validate.py": "def450bb999bdd58fb005c5dcdea4a1a2a1d9018f43b9287e82827fbb460bcf4"
+  },
+  "validation": "Target-specific numerical checks and prepare-only command passed. No full scientific rerun performed.",
+  "scientific_entrypoint_unchanged": "t3b.py",
+  "historical_protocol_byte_identical": true,
+  "privacy": "No local absolute paths, personal names, affiliation, private decision records, or raw replicate data included."
+}

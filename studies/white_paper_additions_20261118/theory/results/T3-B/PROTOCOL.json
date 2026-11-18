@@ -1,0 +1,70 @@
+{
+  "experiment": "T3-B",
+  "not_before_utc": "2026-11-18T19:36:00+00:00",
+  "branching": [
+    2,
+    3,
+    4
+  ],
+  "depths": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "dead_end_masses": [
+    "0",
+    "1/10",
+    "1/4",
+    "1/3",
+    "1/2",
+    "2/3",
+    "3/4",
+    "9/10"
+  ],
+  "wrong_branch_splits": [
+    "uniform",
+    "concentrated"
+  ],
+  "topologies": [
+    "terminal",
+    "full"
+  ],
+  "primary_table": [
+    [
+      2,
+      8,
+      "1/10",
+      "uniform",
+      "full"
+    ],
+    [
+      2,
+      8,
+      "1/2",
+      "uniform",
+      "full"
+    ],
+    [
+      2,
+      8,
+      "9/10",
+      "uniform",
+      "full"
+    ],
+    [
+      2,
+      8,
+      "1/2",
+      "uniform",
+      "terminal"
+    ]
+  ],
+  "seed": null,
+  "analysis": "Exhaust every frozen deterministic cell. Primary contrasts vary m with p=1-m in a normalized unique-goal tree. Secondary contrasts keep m, p, path probability and depth fixed while changing topology or allocation. Report exact expansions, rank floor, L and position between bounds. A finite grid does not establish an asymptotic phase transition. No inferential CI is applicable to deterministic exhaustive cells.",
+  "frozen_utc": "2026-11-18T19:27:12.544770+00:00"
+}
