@@ -1,6 +1,6 @@
 # Rights and redistribution
 
-No blanket repository license has been selected. This artifact does not grant rights to third-party models, model weights, source corpora, or software dependencies. A rights holder should choose an appropriate license before any public release.
+No blanket repository license has been selected. This artifact does not grant rights to third-party models, model weights, source corpora, or software dependencies. This notice does not select or grant an additional repository license.
 
 The portable code includes functions extracted from the original study implementation; their origins and hashes are recorded in `provenance/extracted_functions.json`. Third-party detector implementations and model weights are not vendored. Installed dependencies retain their own licenses.
 
