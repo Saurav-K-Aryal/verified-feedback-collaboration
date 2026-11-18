@@ -1,0 +1,709 @@
+{
+  "purpose": "Topic3 empirical-preprint primary-source verification",
+  "openalex_queries": [
+    {
+      "query": "Self-Refine Iterative Refinement with Self-Feedback",
+      "url": "https://api.openalex.org/works?search=Self-Refine+Iterative+Refinement+with+Self-Feedback&per-page=3&select=id%2Ctitle%2Cdoi%2Cpublication_year%2Cprimary_location",
+      "status": "success",
+      "results": [
+        {
+          "id": "https://openalex.org/W7133236450",
+          "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+          "doi": "https://doi.org/10.52202/075280-2019",
+          "publication_year": 2023,
+          "primary_location": {
+            "id": "doi:10.52202/075280-2019",
+            "doi": "https://doi.org/10.52202/075280-2019",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.52202/075280-2019",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4363606243",
+              "display_name": "neural information processing systems",
+              "issn_l": "1049-5258",
+              "issn": [
+                "1049-5258"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "listed_in": [
+                "cwts-core",
+                "norway-2"
+              ],
+              "host_organization": "https://openalex.org/P4404678063",
+              "host_organization_name": "Neural Information Processing Systems Foundation",
+              "host_organization_lineage": [
+                "https://openalex.org/P4404678063"
+              ],
+              "host_organization_lineage_names": [
+                "Neural Information Processing Systems Foundation"
+              ],
+              "type": "conference"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Advances in Neural Information Processing Systems 36",
+            "raw_type": "proceedings-article"
+          }
+        },
+        {
+          "id": "https://openalex.org/W4411113160",
+          "title": "TEaR: Improving LLM-based Machine Translation with Systematic Self-Refinement",
+          "doi": "https://doi.org/10.18653/v1/2025.findings-naacl.218",
+          "publication_year": 2025,
+          "primary_location": {
+            "id": "doi:10.18653/v1/2025.findings-naacl.218",
+            "doi": "https://doi.org/10.18653/v1/2025.findings-naacl.218",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.18653/v1/2025.findings-naacl.218",
+            "pdf_url": "https://aclanthology.org/2025.findings-naacl.218.pdf",
+            "source": {
+              "id": "https://openalex.org/S4363605604",
+              "display_name": "Findings of the Association for Computational Linguistics: NAACL",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "listed_in": [],
+              "host_organization": "https://openalex.org/P4310320244",
+              "host_organization_name": "Association for Computational Linguistics",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320244"
+              ],
+              "host_organization_lineage_names": [
+                "Association for Computational Linguistics"
+              ],
+              "type": "conference"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Findings of the Association for Computational Linguistics: NAACL 2025",
+            "raw_type": "proceedings-article"
+          }
+        },
+        {
+          "id": "https://openalex.org/W4407759521",
+          "title": "Self Iterative Label Refinement via Robust Unlabeled Learning",
+          "doi": "https://doi.org/10.52202/085713-1058",
+          "publication_year": 2025,
+          "primary_location": {
+            "id": "doi:10.52202/085713-1058",
+            "doi": "https://doi.org/10.52202/085713-1058",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.52202/085713-1058",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4363606243",
+              "display_name": "neural information processing systems",
+              "issn_l": "1049-5258",
+              "issn": [
+                "1049-5258"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "listed_in": [
+                "cwts-core",
+                "norway-2"
+              ],
+              "host_organization": "https://openalex.org/P4404678063",
+              "host_organization_name": "Neural Information Processing Systems Foundation",
+              "host_organization_lineage": [
+                "https://openalex.org/P4404678063"
+              ],
+              "host_organization_lineage_names": [
+                "Neural Information Processing Systems Foundation"
+              ],
+              "type": "conference"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Advances in Neural Information Processing Systems 38",
+            "raw_type": "proceedings-article"
+          }
+        }
+      ]
+    },
+    {
+      "query": "Reflexion Language Agents with Verbal Reinforcement Learning",
+      "url": "https://api.openalex.org/works?search=Reflexion+Language+Agents+with+Verbal+Reinforcement+Learning&per-page=3&select=id%2Ctitle%2Cdoi%2Cpublication_year%2Cprimary_location",
+      "status": "success",
+      "results": [
+        {
+          "id": "https://openalex.org/W7133222210",
+          "title": "Reflexion: language agents with verbal reinforcement learning",
+          "doi": "https://doi.org/10.52202/075280-0377",
+          "publication_year": 2023,
+          "primary_location": {
+            "id": "doi:10.52202/075280-0377",
+            "doi": "https://doi.org/10.52202/075280-0377",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.52202/075280-0377",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4363606243",
+              "display_name": "neural information processing systems",
+              "issn_l": "1049-5258",
+              "issn": [
+                "1049-5258"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "listed_in": [
+                "cwts-core",
+                "norway-2"
+              ],
+              "host_organization": "https://openalex.org/P4404678063",
+              "host_organization_name": "Neural Information Processing Systems Foundation",
+              "host_organization_lineage": [
+                "https://openalex.org/P4404678063"
+              ],
+              "host_organization_lineage_names": [
+                "Neural Information Processing Systems Foundation"
+              ],
+              "type": "conference"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Advances in Neural Information Processing Systems 36",
+            "raw_type": "proceedings-article"
+          }
+        },
+        {
+          "id": "https://openalex.org/W7125931769",
+          "title": "Robust Verbal Reinforcement Learning for Language Agents",
+          "doi": "https://doi.org/10.1109/isaics66888.2025.11350204",
+          "publication_year": 2025,
+          "primary_location": {
+            "id": "doi:10.1109/isaics66888.2025.11350204",
+            "doi": "https://doi.org/10.1109/isaics66888.2025.11350204",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.1109/isaics66888.2025.11350204",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S7407097272",
+              "display_name": "International Symposium on AI and Cybersecurity (ISAICS)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "listed_in": [],
+              "host_organization": "https://openalex.org/P4310319808",
+              "host_organization_name": "Institute of Electrical and Electronics Engineers",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310319808"
+              ],
+              "host_organization_lineage_names": [
+                "Institute of Electrical and Electronics Engineers"
+              ],
+              "type": "conference"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "2025 2nd International Symposium on AI and Cybersecurity (ISAICS)",
+            "raw_type": "proceedings-article"
+          }
+        },
+        {
+          "id": "https://openalex.org/W4388092982",
+          "title": "Language Agents with Reinforcement Learning for Strategic Play in the Werewolf Game",
+          "doi": "https://doi.org/10.48550/arxiv.2310.18940",
+          "publication_year": 2023,
+          "primary_location": {
+            "id": "pmh:oai:arXiv.org:2310.18940",
+            "doi": null,
+            "is_oa": true,
+            "landing_page_url": "http://arxiv.org/abs/2310.18940",
+            "pdf_url": "https://arxiv.org/pdf/2310.18940",
+            "source": {
+              "id": "https://openalex.org/S4306400194",
+              "display_name": "arXiv (Cornell University)",
+              "issn_l": "2331-8422",
+              "issn": [
+                "2331-8422"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "listed_in": [],
+              "host_organization": "https://openalex.org/I205783295",
+              "host_organization_name": "Cornell University",
+              "host_organization_lineage": [
+                "https://openalex.org/I205783295"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "query": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+      "url": "https://api.openalex.org/works?search=Self-Consistency+Improves+Chain+of+Thought+Reasoning+in+Language+Models&per-page=3&select=id%2Ctitle%2Cdoi%2Cpublication_year%2Cprimary_location",
+      "status": "success",
+      "results": [
+        {
+          "id": "https://openalex.org/W4221161695",
+          "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+          "doi": "https://doi.org/10.48550/arxiv.2203.11171",
+          "publication_year": 2022,
+          "primary_location": {
+            "id": "pmh:oai:arXiv.org:2203.11171",
+            "doi": null,
+            "is_oa": true,
+            "landing_page_url": "http://arxiv.org/abs/2203.11171",
+            "pdf_url": "https://arxiv.org/pdf/2203.11171",
+            "source": {
+              "id": "https://openalex.org/S4306400194",
+              "display_name": "arXiv (Cornell University)",
+              "issn_l": "2331-8422",
+              "issn": [
+                "2331-8422"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "listed_in": [],
+              "host_organization": "https://openalex.org/I205783295",
+              "host_organization_name": "Cornell University",
+              "host_organization_lineage": [
+                "https://openalex.org/I205783295"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "text"
+          }
+        },
+        {
+          "id": "https://openalex.org/W4389217371",
+          "title": "Universal Self-Consistency for Large Language Model Generation",
+          "doi": "https://doi.org/10.48550/arxiv.2311.17311",
+          "publication_year": 2023,
+          "primary_location": {
+            "id": "pmh:oai:arXiv.org:2311.17311",
+            "doi": null,
+            "is_oa": true,
+            "landing_page_url": "http://arxiv.org/abs/2311.17311",
+            "pdf_url": "https://arxiv.org/pdf/2311.17311",
+            "source": {
+              "id": "https://openalex.org/S4306400194",
+              "display_name": "arXiv (Cornell University)",
+              "issn_l": "2331-8422",
+              "issn": [
+                "2331-8422"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "listed_in": [],
+              "host_organization": "https://openalex.org/I205783295",
+              "host_organization_name": "Cornell University",
+              "host_organization_lineage": [
+                "https://openalex.org/I205783295"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "text"
+          }
+        },
+        {
+          "id": "https://openalex.org/W4319165821",
+          "title": "Multimodal Chain-of-Thought Reasoning in Language Models",
+          "doi": "https://doi.org/10.48550/arxiv.2302.00923",
+          "publication_year": 2023,
+          "primary_location": {
+            "id": "pmh:oai:arXiv.org:2302.00923",
+            "doi": null,
+            "is_oa": true,
+            "landing_page_url": "http://arxiv.org/abs/2302.00923",
+            "pdf_url": "https://arxiv.org/pdf/2302.00923",
+            "source": {
+              "id": "https://openalex.org/S4306400194",
+              "display_name": "arXiv (Cornell University)",
+              "issn_l": "2331-8422",
+              "issn": [
+                "2331-8422"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "listed_in": [],
+              "host_organization": "https://openalex.org/I205783295",
+              "host_organization_name": "Cornell University",
+              "host_organization_lineage": [
+                "https://openalex.org/I205783295"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by-sa",
+            "license_id": "https://openalex.org/licenses/cc-by-sa",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "query": "Reasoning in Token Economies Budget-Aware Evaluation of LLM Reasoning Strategies",
+      "url": "https://api.openalex.org/works?search=Reasoning+in+Token+Economies+Budget-Aware+Evaluation+of+LLM+Reasoning+Strategies&per-page=3&select=id%2Ctitle%2Cdoi%2Cpublication_year%2Cprimary_location",
+      "status": "success",
+      "results": [
+        {
+          "id": "https://openalex.org/W4404782799",
+          "title": "Reasoning in Token Economies: Budget-Aware Evaluation of LLM Reasoning Strategies",
+          "doi": "https://doi.org/10.18653/v1/2024.emnlp-main.1112",
+          "publication_year": 2024,
+          "primary_location": {
+            "id": "doi:10.18653/v1/2024.emnlp-main.1112",
+            "doi": "https://doi.org/10.18653/v1/2024.emnlp-main.1112",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.18653/v1/2024.emnlp-main.1112",
+            "pdf_url": "https://aclanthology.org/2024.emnlp-main.1112.pdf",
+            "source": {
+              "id": "https://openalex.org/S4363608991",
+              "display_name": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "listed_in": [],
+              "host_organization": "https://openalex.org/P4310320244",
+              "host_organization_name": "Association for Computational Linguistics",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320244"
+              ],
+              "host_organization_lineage_names": [
+                "Association for Computational Linguistics"
+              ],
+              "type": "conference"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+            "raw_type": "proceedings-article"
+          }
+        },
+        {
+          "id": "https://openalex.org/W4412944599",
+          "title": "Token-Budget-Aware LLM Reasoning",
+          "doi": "https://doi.org/10.18653/v1/2025.findings-acl.1274",
+          "publication_year": 2025,
+          "primary_location": {
+            "id": "doi:10.18653/v1/2025.findings-acl.1274",
+            "doi": "https://doi.org/10.18653/v1/2025.findings-acl.1274",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.18653/v1/2025.findings-acl.1274",
+            "pdf_url": "https://aclanthology.org/2025.findings-acl.1274.pdf",
+            "source": {
+              "id": "https://openalex.org/S4363605144",
+              "display_name": "Findings of the Association for Computational Linguistics: ACL (Findings of ACL)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "listed_in": [],
+              "host_organization": "https://openalex.org/P4310320244",
+              "host_organization_name": "Association for Computational Linguistics",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320244"
+              ],
+              "host_organization_lineage_names": [
+                "Association for Computational Linguistics"
+              ],
+              "type": "conference"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Findings of the Association for Computational Linguistics: ACL 2025",
+            "raw_type": "proceedings-article"
+          }
+        },
+        {
+          "id": "https://openalex.org/W4415986755",
+          "title": "BudgetThinker: Empowering Budget-aware LLM Reasoning with Control Tokens",
+          "doi": "https://doi.org/10.18653/2026.findings-emnlp.1465",
+          "publication_year": 2026,
+          "primary_location": {
+            "id": "doi:10.18653/2026.findings-emnlp.1465",
+            "doi": "https://doi.org/10.18653/2026.findings-emnlp.1465",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.18653/2026.findings-emnlp.1465",
+            "pdf_url": "https://aclanthology.org/2026.findings-emnlp.1465.pdf",
+            "source": {
+              "id": "https://openalex.org/S7407096085",
+              "display_name": "Findings of the Association for Computational Linguistics: EMNLP (Findings of EMNLP)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "listed_in": [],
+              "host_organization": "https://openalex.org/P4310320244",
+              "host_organization_name": "Association for Computational Linguistics",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320244"
+              ],
+              "host_organization_lineage_names": [
+                "Association for Computational Linguistics"
+              ],
+              "type": "conference"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+            "raw_type": "proceedings-article"
+          }
+        }
+      ]
+    },
+    {
+      "query": "When Debate Helps Proposal Supply and Verification-Aware Readout in Multi-Agent Reasoning",
+      "url": "https://api.openalex.org/works?search=When+Debate+Helps+Proposal+Supply+and+Verification-Aware+Readout+in+Multi-Agent+Reasoning&per-page=3&select=id%2Ctitle%2Cdoi%2Cpublication_year%2Cprimary_location",
+      "status": "success",
+      "results": [
+        {
+          "id": "https://openalex.org/W7220704772",
+          "title": "When Debate Helps: Proposal Supply and Verification-Aware Readout in Multi-Agent Reasoning",
+          "doi": "https://doi.org/10.48550/arxiv.2610.04686",
+          "publication_year": 2026,
+          "primary_location": {
+            "id": "pmh:oai:arXiv.org:2610.04686",
+            "doi": null,
+            "is_oa": true,
+            "landing_page_url": "https://arxiv.org/abs/2610.04686",
+            "pdf_url": "https://arxiv.org/pdf/2610.04686",
+            "source": {
+              "id": "https://openalex.org/S4306400194",
+              "display_name": "arXiv (Cornell University)",
+              "issn_l": "2331-8422",
+              "issn": [
+                "2331-8422"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "listed_in": [],
+              "host_organization": "https://openalex.org/I205783295",
+              "host_organization_name": "Cornell University",
+              "host_organization_lineage": [
+                "https://openalex.org/I205783295"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "text"
+          }
+        },
+        {
+          "id": "https://openalex.org/W7168341566",
+          "title": "TRACE: An Operational Reasoning Schema for Auditable Agentic Commitments",
+          "doi": "https://doi.org/10.48550/arxiv.2607.12480",
+          "publication_year": 2026,
+          "primary_location": {
+            "id": "pmh:oai:arXiv.org:2607.12480",
+            "doi": null,
+            "is_oa": true,
+            "landing_page_url": "https://arxiv.org/abs/2607.12480",
+            "pdf_url": "https://arxiv.org/pdf/2607.12480",
+            "source": {
+              "id": "https://openalex.org/S4306400194",
+              "display_name": "arXiv (Cornell University)",
+              "issn_l": "2331-8422",
+              "issn": [
+                "2331-8422"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "listed_in": [],
+              "host_organization": "https://openalex.org/I205783295",
+              "host_organization_name": "Cornell University",
+              "host_organization_lineage": [
+                "https://openalex.org/I205783295"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "text"
+          }
+        },
+        {
+          "id": "https://openalex.org/W7214901072",
+          "title": "From Retrieval to Reasoning: Agentic Mechanism Prediction from Cell Painting Profiles",
+          "doi": "https://doi.org/10.48550/arxiv.2609.36406",
+          "publication_year": 2026,
+          "primary_location": {
+            "id": "pmh:oai:arXiv.org:2609.36406",
+            "doi": null,
+            "is_oa": true,
+            "landing_page_url": "https://arxiv.org/abs/2609.36406",
+            "pdf_url": "https://arxiv.org/pdf/2609.36406",
+            "source": {
+              "id": "https://openalex.org/S4306400194",
+              "display_name": "arXiv (Cornell University)",
+              "issn_l": "2331-8422",
+              "issn": [
+                "2331-8422"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "listed_in": [],
+              "host_organization": "https://openalex.org/I205783295",
+              "host_organization_name": "Cornell University",
+              "host_organization_lineage": [
+                "https://openalex.org/I205783295"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "query": "Stop Overvaluing Multi-Agent Debate",
+      "url": "https://api.openalex.org/works?search=Stop+Overvaluing+Multi-Agent+Debate&per-page=3&select=id%2Ctitle%2Cdoi%2Cpublication_year%2Cprimary_location",
+      "status": "error",
+      "error_type": "HTTPError",
+      "http_code": 429
+    }
+  ],
+  "prior_audits": [
+    "work/topic3_literature_audit.json",
+    "work/pilot_next/topic3_openalex_queries.json"
+  ],
+  "primary_sources": [
+    {
+      "citation_key": "wang2023selfconsistency",
+      "url": "https://arxiv.org/abs/2203.11171",
+      "verification": "Primary bibliographic record inspected on 2026-11-18; author list, title, year and venue/preprint status checked."
+    },
+    {
+      "citation_key": "wang2024tokeneconomies",
+      "url": "https://aclanthology.org/2024.emnlp-main.1112/",
+      "verification": "Primary bibliographic record inspected on 2026-11-18; author list, title, year and venue/preprint status checked."
+    },
+    {
+      "citation_key": "madaan2023selfrefine",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html",
+      "verification": "Primary bibliographic record inspected on 2026-11-18; author list, title, year and venue/preprint status checked."
+    },
+    {
+      "citation_key": "shinn2023reflexion",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html",
+      "verification": "Primary bibliographic record inspected on 2026-11-18; author list, title, year and venue/preprint status checked."
+    },
+    {
+      "citation_key": "huang2024selfcorrect",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html",
+      "verification": "Primary bibliographic record inspected on 2026-11-18; author list, title, year and venue/preprint status checked."
+    },
+    {
+      "citation_key": "du2024debate",
+      "url": "https://proceedings.mlr.press/v235/du24e.html",
+      "verification": "Primary bibliographic record inspected on 2026-11-18; author list, title, year and venue/preprint status checked."
+    },
+    {
+      "citation_key": "zhang2025overvaluing",
+      "url": "https://arxiv.org/abs/2502.08788v3",
+      "verification": "Primary bibliographic record inspected on 2026-11-18; author list, title, year and venue/preprint status checked."
+    },
+    {
+      "citation_key": "zhao2026debate",
+      "url": "https://arxiv.org/abs/2610.04686",
+      "verification": "Primary bibliographic record inspected on 2026-11-18; author list, title, year and venue/preprint status checked."
+    },
+    {
+      "citation_key": "solarlezama2008sketching",
+      "url": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2008/EECS-2008-176.html",
+      "verification": "Primary bibliographic record inspected on 2026-11-18; author list, title, year and venue/preprint status checked."
+    },
+    {
+      "citation_key": "park2025grammar",
+      "url": "https://proceedings.mlr.press/v267/park25l.html",
+      "verification": "Primary bibliographic record inspected on 2026-11-18; author list, title, year and venue/preprint status checked."
+    },
+    {
+      "citation_key": "clopper1934limits",
+      "url": "https://doi.org/10.1093/biomet/26.4.404",
+      "verification": "Primary bibliographic record inspected on 2026-11-18; author list, title, year and venue/preprint status checked."
+    }
+  ],
+  "references_sha256": "4ce1321b3a99c6f38bd1b8365aa193754b6b5e19798657e37436da022771bdd9"
+}

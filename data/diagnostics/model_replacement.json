@@ -1,0 +1,339 @@
+{
+  "protocol": {
+    "version": 1,
+    "prepared_utc": "2026-11-18T11:56:50.456336+00:00",
+    "original_request_hash": "b48376d1000be1f64ad24d19038f1b21d86030edc808b50e458707e4dfbcab61",
+    "task_id": "extension_full_test_0081",
+    "original_model": "llama3.1:8b",
+    "replacement_model": "mistral-small3.2:24b",
+    "replacement_model_manifest": {
+      "tag": "mistral-small3.2:24b",
+      "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+      "bytes": 15177384862,
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "mistral3",
+        "families": [
+          "mistral3"
+        ],
+        "parameter_size": "24.0B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 5120,
+        "runner": "ggml"
+      },
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools"
+      ],
+      "thinking": null,
+      "parameters": "temperature                    0.15",
+      "model_info": {
+        "general.architecture": "mistral3",
+        "general.file_type": 15,
+        "general.parameter_count": 24011361280,
+        "general.quantization_version": 2,
+        "mistral3.attention.head_count": 32,
+        "mistral3.attention.head_count_kv": 8,
+        "mistral3.attention.key_length": 128,
+        "mistral3.attention.layer_norm_rms_epsilon": 1e-05,
+        "mistral3.attention.value_length": 128,
+        "mistral3.block_count": 40,
+        "mistral3.context_length": 131072,
+        "mistral3.embedding_length": 5120,
+        "mistral3.feed_forward_length": 32768,
+        "mistral3.image_token_index": 10,
+        "mistral3.mm.projector_bias": false,
+        "mistral3.mm.projector_hidden_act": "gelu",
+        "mistral3.rope.dimension_count": 128,
+        "mistral3.rope.freq_base": 1000000000,
+        "mistral3.spatial_merge_size": 2,
+        "mistral3.vision.attention.head_count": 16,
+        "mistral3.vision.attention.key_length": 64,
+        "mistral3.vision.block_count": 24,
+        "mistral3.vision.embedding_length": 1024,
+        "mistral3.vision.feed_forward_length": 4096,
+        "mistral3.vision.image_size": 1540,
+        "mistral3.vision.num_channels": 3,
+        "mistral3.vision.patch_size": 14,
+        "mistral3.vision.rope.freq_base": 10000,
+        "mistral3.vocab_size": 131072,
+        "tokenizer.ggml.add_bos_token": true,
+        "tokenizer.ggml.add_eos_token": false,
+        "tokenizer.ggml.add_padding_token": false,
+        "tokenizer.ggml.add_unknown_token": false,
+        "tokenizer.ggml.bos_token_id": 1,
+        "tokenizer.ggml.eos_token_id": 2,
+        "tokenizer.ggml.merges": [],
+        "tokenizer.ggml.model": "gpt2",
+        "tokenizer.ggml.padding_token_id": 11,
+        "tokenizer.ggml.pre": "llama-bpe",
+        "tokenizer.ggml.scores": [],
+        "tokenizer.ggml.token_type": [],
+        "tokenizer.ggml.tokens": [],
+        "tokenizer.ggml.unknown_token_id": 0
+      }
+    },
+    "server_version": {
+      "version": "0.40.13"
+    },
+    "prompt_sha256": "ea03697cdeb48844f4d96d9a4b9a662df43b6aaab7e397f6bf36351c97079b22",
+    "seed": 1730620898,
+    "options": {
+      "seed": 1730620898,
+      "num_predict": 512,
+      "num_ctx": 8192,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repeat_penalty": 1.0
+    },
+    "maximum_additional_calls": 1,
+    "script_sha256": "610d1e8e90f0c6d95f7f4a65f913aa632d7239c6f45119f6a004e4aa57933e4b",
+    "design": "Post-study single-task diagnostic selected because of a recorded serving abort. No population comparison, primary claim or replacement of frozen outcomes.",
+    "selection": "Installed different model family, selected before observing its response; nominally larger than the original Llama tag.",
+    "original_scientific_comparison_valid": false,
+    "task": {
+      "family": "boolean_program",
+      "public": {
+        "variables": [
+          "x0",
+          "x1",
+          "x2",
+          "x3"
+        ],
+        "truth_table": [
+          {
+            "input": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "output": 1
+          },
+          {
+            "input": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "output": 1
+          },
+          {
+            "input": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "output": 0
+          },
+          {
+            "input": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "output": 0
+          },
+          {
+            "input": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "output": 0
+          },
+          {
+            "input": [
+              0,
+              1,
+              0,
+              1
+            ],
+            "output": 0
+          },
+          {
+            "input": [
+              0,
+              1,
+              1,
+              0
+            ],
+            "output": 1
+          },
+          {
+            "input": [
+              0,
+              1,
+              1,
+              1
+            ],
+            "output": 1
+          },
+          {
+            "input": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "output": 1
+          },
+          {
+            "input": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "output": 0
+          },
+          {
+            "input": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "output": 0
+          },
+          {
+            "input": [
+              1,
+              0,
+              1,
+              1
+            ],
+            "output": 1
+          },
+          {
+            "input": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "output": 0
+          },
+          {
+            "input": [
+              1,
+              1,
+              0,
+              1
+            ],
+            "output": 1
+          },
+          {
+            "input": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "output": 1
+          },
+          {
+            "input": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "output": 0
+          }
+        ],
+        "max_nodes": 127,
+        "max_depth": 12
+      },
+      "reference_certificate": {
+        "expr": [
+          "xor",
+          [
+            "xor",
+            [
+              "xor",
+              "x0",
+              "x0"
+            ],
+            [
+              "xor",
+              "x2",
+              [
+                "not",
+                "x1"
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "and",
+              "x3",
+              "x0"
+            ],
+            [
+              "or",
+              "x3",
+              "x1"
+            ]
+          ]
+        ]
+      },
+      "complexity": {
+        "variables": 4,
+        "generating_depth": 3
+      },
+      "semantic_signature": "1388f9ffe85e4a17a95e5d8b9765213fa77c988d4a4fe784abd999cd5b666bf8",
+      "task_id": "extension_full_test_0081",
+      "phase": "test",
+      "regime": "grade_1",
+      "grade": 1,
+      "seed": 293543000
+    }
+  },
+  "result": {
+    "model": "mistral-small3.2:24b",
+    "task_id": "extension_full_test_0081",
+    "scope": "Post-study single-task diagnostic selected because of a recorded serving abort. No population comparison, primary claim or replacement of frozen outcomes.",
+    "original_observation_replaced": false,
+    "original_scientific_comparison_valid": false,
+    "status": "completed_replacement_diagnostic",
+    "response": {
+      "text": "{\"expr\":[\"and\",[\"or\",[\"and\",[\"not\",\"x0\"],[\"not\",\"x3\"]],[\"and\",[\"not\",\"x1\"],[\"not\",\"x2\"]]],[\"or\",[\"and\",[\"not\",\"x0\"],[\"not\",\"x1\"]],[\"and\",[\"not\",\"x2\"],[\"not\",\"x3\"]]]]}",
+      "model": "mistral-small3.2:24b",
+      "model_digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+      "seed": 1730620898,
+      "prompt_tokens": 1509,
+      "output_tokens": 78,
+      "total_seconds": 7.062249792,
+      "wall_seconds": 7.064970874998835,
+      "eval_seconds": 2.07834,
+      "prompt_eval_seconds": 1.664046,
+      "load_seconds": 3.308484958,
+      "done": true,
+      "finish_reason": "stop",
+      "request_hash": "e79773cd9896b2de89d31ae49cfade7aa24aa5c7cc33177eab2b466ca1ec6e21",
+      "cache_hit": false,
+      "created_at": "2026-11-18T11:56:57.519415Z"
+    },
+    "verdict": {
+      "accepted": false,
+      "kind": "counterexample",
+      "feedback": "Counterexample: input [0, 0, 1, 0] gives 1; the required output is 0."
+    },
+    "completed_utc": "2026-11-18T11:56:57.527112+00:00",
+    "original_run_unchanged": true
+  },
+  "provenance": {
+    "PROTOCOL.json": "d99b52edaf3e5410698d3aabf27ffae52522cfedb648b133291af0426e5eb616",
+    "RESULT.json": "58b187d022008a2521a54ce7ff37da692f0847aa3f0b96c64231bc10cde749e3"
+  },
+  "scope": "Separate one-task diagnostic; no changes to original frozen observations, model panel, counts or primary eligibility."
+}

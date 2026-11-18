@@ -1,0 +1,14 @@
+{
+  "run_id": "20261118T030136Z_full",
+  "mode": "full",
+  "execution_complete": true,
+  "scientific_comparison_valid": false,
+  "scope": "Frozen inference-time reasoning experiment. No training or scientific-discovery claim.",
+  "primary_method": "Source-stratified paired-discordance CP bounds with alpha .025 per comparison; original any-request-error exclusion retained.",
+  "raw_calls_sha256": "ed2e82ec4d5587a4029e157a3a6e392e29c402775edf42de0fd1af0ade1bb7fb",
+  "task_manifest_sha256": "13a2780977d490d0c96a5cd3094c7e0d7972a09933053482f0d27bb384086bb3",
+  "protocol_sha256": "213e4ea711b56dbb68fffa9c4decd74787edb6048b7245936585aed397176741",
+  "original_pilot_raw_calls_sha256": "c93c9c06a3af82172b52d77e7bb1194e66e2667b632ea36ea10c6317d17df0d8",
+  "original_pilot_total_calls": 936,
+  "exported_original_pilot_test_calls": 720
+}

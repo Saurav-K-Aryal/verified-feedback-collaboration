@@ -1,0 +1,20 @@
+{
+  "physical_calls": 3824,
+  "test_tasks": 256,
+  "request_errors": 1,
+  "first_call_solved": 74,
+  "exact_solver_solved": 256,
+  "scientific_comparison_valid": false,
+  "method_solved": {
+    "best_independent3": 78,
+    "best_validity3": 115,
+    "best_counterexample3": 117,
+    "mixed_independent3": 88,
+    "mixed_counterexample3": 106,
+    "matched_independent3": 78,
+    "matched_validity3": 115
+  },
+  "retrospective_test_candidates": 720,
+  "retrospective_normalizations": 8,
+  "retrospective_recovered_certificates": 0
+}

@@ -1,0 +1,3 @@
+method,baseline,n,difference,interval_level,lower,upper,above_five_point_margin,frozen_comparison_valid
+best_counterexample3,best_independent3,256,0.15234375,0.975,-0.08139006848886193,0.34459425693177564,False,False
+best_counterexample3,best_validity3,256,0.0078125,0.975,-0.16436161501136354,0.18008897125009338,False,False

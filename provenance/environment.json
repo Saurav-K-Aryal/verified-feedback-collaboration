@@ -1,0 +1,15 @@
+{
+  "python": "3.12",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "torch": "2.9.1",
+    "transformers": "4.57.1",
+    "huggingface_hub": "0.36.0"
+  },
+  "server_version": {
+    "version": "0.40.13"
+  },
+  "backend_note": "The configurations differ in model size, quantization and serving backend; equal calls do not mean equal FLOPs."
+}

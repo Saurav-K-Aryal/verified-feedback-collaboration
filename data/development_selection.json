@@ -1,0 +1,36 @@
+{
+  "scores": [
+    {
+      "model": "qwen3.5:4b",
+      "n": 48,
+      "independent": 12,
+      "validity": 12,
+      "counterexample": 10
+    },
+    {
+      "model": "llama3.1:8b",
+      "n": 48,
+      "independent": 6,
+      "validity": 3,
+      "counterexample": 5
+    },
+    {
+      "model": "gemma4:12b",
+      "n": 48,
+      "independent": 15,
+      "validity": 19,
+      "counterexample": 20
+    }
+  ],
+  "selected": {
+    "independent": "gemma4:12b",
+    "validity": "gemma4:12b",
+    "counterexample": "gemma4:12b"
+  },
+  "mixed_order": [
+    "gemma4:12b",
+    "qwen3.5:4b",
+    "llama3.1:8b"
+  ],
+  "scope": "Development only; smoke uses one-draw proxy scores."
+}

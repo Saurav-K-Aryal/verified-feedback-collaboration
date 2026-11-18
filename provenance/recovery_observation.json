@@ -1,0 +1,15 @@
+{
+  "request_hash": "b48376d1000be1f64ad24d19038f1b21d86030edc808b50e458707e4dfbcab61",
+  "failed_uid": "extension_full_test_0081/counterexample/2-0-1/2",
+  "attempt_number": 1,
+  "started_utc": "2026-11-18T11:46:25.315017+00:00",
+  "original_scientific_comparison_valid": false,
+  "original_observation_replaced": false,
+  "scope": "Separately amended operational recovery; diagnostic/sensitivity use only.",
+  "status": "failed_recovery_attempt",
+  "error": "RuntimeError: Ollama HTTP 500: {\"error\":\"prediction aborted, token repeat limit reached\"}",
+  "automatic_retry_allowed": false,
+  "finished_utc": "2026-11-18T11:46:30.524607+00:00",
+  "wall_seconds": 5.208456499996828,
+  "source_integrity_preserved": true
+}

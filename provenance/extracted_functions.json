@@ -1,0 +1,100 @@
+[
+  {
+    "function": "canonical",
+    "original_file": "outputs/overnight_multimodel/topic3_models.py",
+    "original_file_sha256": "04ee69f54923c424850c87166cd6dc521392fc20aa9f9709d195bed4a69e728c",
+    "first_line": 29,
+    "function_source_sha256": "48c07b41189d3e3f8c60ede1ee82a39b6ea22fc68e9495559760d057d0e8a3ea"
+  },
+  {
+    "function": "digest",
+    "original_file": "outputs/overnight_multimodel/topic3_models.py",
+    "original_file_sha256": "04ee69f54923c424850c87166cd6dc521392fc20aa9f9709d195bed4a69e728c",
+    "first_line": 33,
+    "function_source_sha256": "22b991eeebdb00cb36100b1ef6e74b9911147db0369d5106fabeb270a11e8503"
+  },
+  {
+    "function": "_reject_pairs",
+    "original_file": "outputs/overnight_multimodel/topic3_models.py",
+    "original_file_sha256": "04ee69f54923c424850c87166cd6dc521392fc20aa9f9709d195bed4a69e728c",
+    "first_line": 44,
+    "function_source_sha256": "353879ea869cb2590a56bd560e3d35a4677b8b199f2ae2035b471c68431d36a6"
+  },
+  {
+    "function": "strict_json",
+    "original_file": "outputs/overnight_multimodel/topic3_models.py",
+    "original_file_sha256": "04ee69f54923c424850c87166cd6dc521392fc20aa9f9709d195bed4a69e728c",
+    "first_line": 53,
+    "function_source_sha256": "0a264b28a27147f132d91b564731e6c36d285ade1fadcab396d6bae3d1af4c78"
+  },
+  {
+    "function": "eval_expr",
+    "original_file": "outputs/overnight_multimodel/topic3_models.py",
+    "original_file_sha256": "04ee69f54923c424850c87166cd6dc521392fc20aa9f9709d195bed4a69e728c",
+    "first_line": 60,
+    "function_source_sha256": "7952aa047a53084462099b54522951a39930d95858b3120532c081de6147280e"
+  },
+  {
+    "function": "check_candidate",
+    "original_file": "outputs/overnight_multimodel/topic3_models.py",
+    "original_file_sha256": "04ee69f54923c424850c87166cd6dc521392fc20aa9f9709d195bed4a69e728c",
+    "first_line": 85,
+    "function_source_sha256": "8615a7d594d9313e7cbcefc527d03cef0d5e26e747c15cc488ff56d3254b5b5b"
+  },
+  {
+    "function": "_sum_cost",
+    "original_file": "outputs/overnight_multimodel/topic3_models.py",
+    "original_file_sha256": "04ee69f54923c424850c87166cd6dc521392fc20aa9f9709d195bed4a69e728c",
+    "first_line": 271,
+    "function_source_sha256": "95c971c73d752a3155ef2d4e04bbf10467de0de70788d5242de2b3fc2834927e"
+  },
+  {
+    "function": "portfolio",
+    "original_file": "outputs/overnight_multimodel/topic3_models.py",
+    "original_file_sha256": "04ee69f54923c424850c87166cd6dc521392fc20aa9f9709d195bed4a69e728c",
+    "first_line": 276,
+    "function_source_sha256": "40d9fc800cf7c46db0777f24e76e881d30ecf9c30ef52337ef5c2ae34580bd58"
+  },
+  {
+    "function": "exact_solve",
+    "original_file": "outputs/overnight_multimodel/topic3_models.py",
+    "original_file_sha256": "04ee69f54923c424850c87166cd6dc521392fc20aa9f9709d195bed4a69e728c",
+    "first_line": 331,
+    "function_source_sha256": "9079ee6dd937fdb16da97aa10086905224d77707eab2cc338a42eb909d53e840"
+  },
+  {
+    "function": "_balanced",
+    "original_file": "outputs/pilot_extensions/topic3_extension.py",
+    "original_file_sha256": "845d06f304566a81229cf91f5cbe576c7cba0f7b029c5f00ba423eb219d7ba1e",
+    "first_line": 51,
+    "function_source_sha256": "4bb752331e37cfab902d0ae3e0ece444890f8762b01f932bc85f9cb199c8f69a"
+  },
+  {
+    "function": "normalize_associative",
+    "original_file": "outputs/pilot_extensions/topic3_extension.py",
+    "original_file_sha256": "845d06f304566a81229cf91f5cbe576c7cba0f7b029c5f00ba423eb219d7ba1e",
+    "first_line": 58,
+    "function_source_sha256": "3b5c981fc3e87c79d0eb478bc4e2d9569c4c64341e2386afb1dc18acfb8d0667"
+  },
+  {
+    "function": "_extended_value",
+    "original_file": "outputs/pilot_extensions/topic3_extension.py",
+    "original_file_sha256": "845d06f304566a81229cf91f5cbe576c7cba0f7b029c5f00ba423eb219d7ba1e",
+    "first_line": 78,
+    "function_source_sha256": "632af9e80b5ece008ba885c0860928bab3ad0e5042aabbd782d728f3ee7f6035"
+  },
+  {
+    "function": "diagnose_candidate",
+    "original_file": "outputs/pilot_extensions/topic3_extension.py",
+    "original_file_sha256": "845d06f304566a81229cf91f5cbe576c7cba0f7b029c5f00ba423eb219d7ba1e",
+    "first_line": 97,
+    "function_source_sha256": "0742177b2c2e60ad33205a68473ebf7f76b80edf4f162f7541f05f5984a80ee1"
+  },
+  {
+    "function": "conservative_comparison",
+    "original_file": "outputs/pilot_extensions/topic3_extension.py",
+    "original_file_sha256": "845d06f304566a81229cf91f5cbe576c7cba0f7b029c5f00ba423eb219d7ba1e",
+    "first_line": 308,
+    "function_source_sha256": "b291e81e67ec6aa8ebbae7880f81b3706fcf0ed8e39b8fec1228c2c3b2430b51"
+  }
+]
