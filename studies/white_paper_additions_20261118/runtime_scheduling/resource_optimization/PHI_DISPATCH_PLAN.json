@@ -1,0 +1,38 @@
+{
+  "prepared_utc": "2026-11-19T02:38:07.726075+00:00",
+  "version": "phi-dispatch-1",
+  "input_sha256": {
+    "PROJECT_ROOT/outputs/white_paper_additions/resource_optimization/dispatch_phi.py": "5393e26a1e3c5fb620ec02a4b1b29d7da59dd46d5e78ddcace26ce0039bf9b73",
+    "PROJECT_ROOT/outputs/white_paper_additions/topic12/optional_phi.py": "18db40747dc01a5f26808b4a60e14f1360d07cba797145010bfcc00dd55d3169",
+    "PROJECT_ROOT/outputs/white_paper_additions/topic12/run_topic12.py": "1d32ef8403e14449768be64c0556839fa44bd14067e93ba89da5945a28384419",
+    "PROJECT_ROOT/outputs/overnight_multimodel/local_models.py": "6beae01016169f6f809357961199c3bb4b432e126a7e8068f4e80d6fcd69631a",
+    "PROJECT_ROOT/outputs/white_paper_additions/topic12/optional_phi/PROTOCOL.json": "6582d3b226415caccfef8fc5df2cee98bf78e4790331fafb15898b2a6a4b1e2e",
+    "PROJECT_ROOT/outputs/white_paper_additions/topic12/optional_phi/MODEL_LOCK.json": "dd3deb124f0c8c4f700a30f30664bf499c316b298fea6ebf82446da1b04ddcac",
+    "PROJECT_ROOT/outputs/white_paper_additions/topic12/optional_phi/TEST_LOCK.json": "26a26de4340ce5cba348f292ea3237c3b3924b09ae22c2e71895053d9990b75c",
+    "PROJECT_ROOT/outputs/white_paper_additions/topic12/optional_phi/SELECTED_TEST_MANIFEST.json": "5078c9eeededbfe54782b9125b5a3a641d45e0435ff7ca994f2b3737fcc8ad6b"
+  },
+  "base_url": "http://127.0.0.1:11535",
+  "hard_stop_utc": "2026-11-19T21:00:00+00:00",
+  "workers_allowed": [
+    1,
+    2
+  ],
+  "authorization": "User requested two Mistral and two Phi requests if this reduces total wall time.",
+  "amendment": "Supersedes serial local inference wording only for request scheduling and the isolated localhost endpoint. The original frozen files are retained unchanged. The reviewed supervisor selects one or two workers from a separate frozen timing benchmark before test generation.",
+  "unchanged": [
+    "450 selected IDs",
+    "parent texts",
+    "prompt and parent hashes",
+    "per-task seeds",
+    "model digest",
+    "server version",
+    "context and decoding settings",
+    "generation budget",
+    "detector implementations",
+    "thresholds",
+    "analysis and missing-outcome rules"
+  ],
+  "dispatcher": "Bounded worker clients with separate request/cache files and one durable result writer. A durable task intent precedes each submission. Attempted tasks lacking final records refuse automatic resume. Recorded errors are retained and never retried.",
+  "runtime": "One persisted absolute generation deadline, at most two requests in flight for Phi; downstream detector work requires both generation clients and all isolated-server model work to finish.",
+  "limit": "Request scheduling and batching may change numerical execution; this is not a claim of bit-identical model outputs."
+}

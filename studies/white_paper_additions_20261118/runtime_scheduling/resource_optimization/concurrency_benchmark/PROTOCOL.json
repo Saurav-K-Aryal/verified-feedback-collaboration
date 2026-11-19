@@ -1,0 +1,80 @@
+{
+  "frozen_utc": "2026-11-19T02:23:52.265492+00:00",
+  "purpose": "Operational warm serial versus two-model concurrent timing only",
+  "models": [
+    "mistral-small3.2:24b",
+    "phi4:14b"
+  ],
+  "blocks": 4,
+  "warmups_per_model": 1,
+  "output_cap": 128,
+  "context": 8192,
+  "max_wall_seconds": 300,
+  "per_request_timeout": 90,
+  "temperature": 0.7,
+  "top_p": 0.9,
+  "repeat_penalty": 1.0,
+  "keep_alive": "18h",
+  "seed_formula": "2026111900 + block*10 + model_index; identical across modes",
+  "mode_order": {
+    "0": [
+      "serial",
+      "parallel"
+    ],
+    "1": [
+      "parallel",
+      "serial"
+    ],
+    "2": [
+      "serial",
+      "parallel"
+    ],
+    "3": [
+      "parallel",
+      "serial"
+    ]
+  },
+  "serial_model_order": {
+    "0": [
+      "mistral-small3.2:24b",
+      "phi4:14b"
+    ],
+    "1": [
+      "phi4:14b",
+      "mistral-small3.2:24b"
+    ],
+    "2": [
+      "mistral-small3.2:24b",
+      "phi4:14b"
+    ],
+    "3": [
+      "phi4:14b",
+      "mistral-small3.2:24b"
+    ]
+  },
+  "prompts": {
+    "-1": "This is a synthetic timing exercise, not a research evaluation. A fictional workshop sorts wooden tokens into bins. Each token has a printed number, a painted color, and a shape. No real people, private records, or source documents are involved. Produce a long numbered list of independent inventory entries in plain text. Each entry should state the token number, color, shape, and bin. Cycle colors red, blue, green, yellow and shapes circle, square, triangle. Start at token -99. Continue making entries for at least 100 tokens. Do not summarize or stop early. Begin the numbered list immediately and do not add an introduction.",
+    "0": "This is a synthetic timing exercise, not a research evaluation. A fictional workshop sorts wooden tokens into bins. Each token has a printed number, a painted color, and a shape. No real people, private records, or source documents are involved. Produce a long numbered list of independent inventory entries in plain text. Each entry should state the token number, color, shape, and bin. Cycle colors red, blue, green, yellow and shapes circle, square, triangle. Start at token 1. Continue making entries for at least 100 tokens. Do not summarize or stop early. Begin the numbered list immediately and do not add an introduction.",
+    "1": "This is a synthetic timing exercise, not a research evaluation. A fictional workshop sorts wooden tokens into bins. Each token has a printed number, a painted color, and a shape. No real people, private records, or source documents are involved. Produce a long numbered list of independent inventory entries in plain text. Each entry should state the token number, color, shape, and bin. Cycle colors red, blue, green, yellow and shapes circle, square, triangle. Start at token 101. Continue making entries for at least 100 tokens. Do not summarize or stop early. Begin the numbered list immediately and do not add an introduction.",
+    "2": "This is a synthetic timing exercise, not a research evaluation. A fictional workshop sorts wooden tokens into bins. Each token has a printed number, a painted color, and a shape. No real people, private records, or source documents are involved. Produce a long numbered list of independent inventory entries in plain text. Each entry should state the token number, color, shape, and bin. Cycle colors red, blue, green, yellow and shapes circle, square, triangle. Start at token 201. Continue making entries for at least 100 tokens. Do not summarize or stop early. Begin the numbered list immediately and do not add an introduction.",
+    "3": "This is a synthetic timing exercise, not a research evaluation. A fictional workshop sorts wooden tokens into bins. Each token has a printed number, a painted color, and a shape. No real people, private records, or source documents are involved. Produce a long numbered list of independent inventory entries in plain text. Each entry should state the token number, color, shape, and bin. Cycle colors red, blue, green, yellow and shapes circle, square, triangle. Start at token 301. Continue making entries for at least 100 tokens. Do not summarize or stop early. Begin the numbered list immediately and do not add an introduction."
+  },
+  "gate": {
+    "median_paired_wall_improvement_at_least": 0.1,
+    "parallel_faster_blocks_at_least": 3,
+    "required_complete_blocks": 4,
+    "errors": 0,
+    "minimum_memory_free_percent": 20,
+    "max_relative_paired_output_token_difference": 0.05,
+    "minimum_output_tokens_per_timed_call": 100
+  },
+  "background": "Existing Gemma primary test continues unchanged throughout. Findings are conditional on this background workload.",
+  "limits": [
+    "No inference about scientific reach, detector accuracy, or completed scientific cases.",
+    "Small operational benchmark is not a performance publication or a full-queue speedup guarantee.",
+    "Different models sharing one GPU can affect both background and foreground throughput."
+  ],
+  "code_sha256": "ee96bdd921b7c1836414f663b91284e9254159968f69950c4f4096df651628e0",
+  "no_generated_text_saved": true,
+  "no_retries": true
+}

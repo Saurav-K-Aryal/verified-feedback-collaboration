@@ -1,0 +1,111 @@
+{
+  "staged_utc": "2026-11-19T02:44:54.433978+00:00",
+  "status": "Staged for review, not pushed",
+  "controller_plan_sha256": "fc2d6107f9567ce644e1d8de936e5587cf35e3cddec5dbf46265d0f9ba605e73",
+  "allowlist": [
+    {
+      "file": "resource_optimization/dispatch_t3.py",
+      "original_sha256": "bb4592727ea5fd620426c84ec2f4088d4329da44d84e8a0ff18a9b2856a12e54",
+      "public_sha256": "bb4592727ea5fd620426c84ec2f4088d4329da44d84e8a0ff18a9b2856a12e54",
+      "local_paths_redacted": false,
+      "byte_identical": true
+    },
+    {
+      "file": "resource_optimization/dispatch_phi.py",
+      "original_sha256": "5393e26a1e3c5fb620ec02a4b1b29d7da59dd46d5e78ddcace26ce0039bf9b73",
+      "public_sha256": "5393e26a1e3c5fb620ec02a4b1b29d7da59dd46d5e78ddcace26ce0039bf9b73",
+      "local_paths_redacted": false,
+      "byte_identical": true
+    },
+    {
+      "file": "resource_optimization/test_dispatch_t3.py",
+      "original_sha256": "d2e685c6384d54d56c0c8453eeaabea9b6764b4a096c761b2b548ae5702e3ec7",
+      "public_sha256": "d2e685c6384d54d56c0c8453eeaabea9b6764b4a096c761b2b548ae5702e3ec7",
+      "local_paths_redacted": false,
+      "byte_identical": true
+    },
+    {
+      "file": "resource_optimization/test_dispatch_phi.py",
+      "original_sha256": "793736950d0bd2602cab834280149c164df255be7cdc8122d320dde38ac166e4",
+      "public_sha256": "793736950d0bd2602cab834280149c164df255be7cdc8122d320dde38ac166e4",
+      "local_paths_redacted": false,
+      "byte_identical": true
+    },
+    {
+      "file": "resource_optimization/benchmark_fourway.py",
+      "original_sha256": "060289c15dd67da820342f4714fe4249712d7435fe667c66a77b5c03996774bb",
+      "public_sha256": "060289c15dd67da820342f4714fe4249712d7435fe667c66a77b5c03996774bb",
+      "local_paths_redacted": false,
+      "byte_identical": true
+    },
+    {
+      "file": "resource_optimization/FOURWAY_BENCHMARK_PLAN.json",
+      "original_sha256": "606084a6dda752ff51bd8438e4f935e2494ea5c715bd2d3724765b79f342fc33",
+      "public_sha256": "606084a6dda752ff51bd8438e4f935e2494ea5c715bd2d3724765b79f342fc33",
+      "local_paths_redacted": false,
+      "byte_identical": true
+    },
+    {
+      "file": "resource_optimization/PHI_DISPATCH_PLAN.json",
+      "original_sha256": "6b3477b71805b0fee16161ffaf09bee387f9b2871a6f661dbd16984faf78fb38",
+      "public_sha256": "40abd30af37a1e02f504b0377566ec6e716e3a4498cc57d8590005be0ba5152f",
+      "local_paths_redacted": true,
+      "byte_identical": false
+    },
+    {
+      "file": "run_remaining_v2.py",
+      "original_sha256": "ab1323254535ed2183572aeea86339f275eed0a693e002c95fb213e9d9f8feb3",
+      "public_sha256": "ab1323254535ed2183572aeea86339f275eed0a693e002c95fb213e9d9f8feb3",
+      "local_paths_redacted": false,
+      "byte_identical": true
+    },
+    {
+      "file": "test_run_remaining_v2.py",
+      "original_sha256": "5beeed9ba5979f425e5166cd8b1c1093410b535abf26db2f73bbb2d2972a8bdf",
+      "public_sha256": "5beeed9ba5979f425e5166cd8b1c1093410b535abf26db2f73bbb2d2972a8bdf",
+      "local_paths_redacted": false,
+      "byte_identical": true
+    },
+    {
+      "file": "resource_optimization/concurrency_benchmark/RESULT.json",
+      "original_sha256": "4e4dd32822e5c47d68a24de897a78d040c706a3797c484504ea79acce7190ffe",
+      "public_sha256": "4e4dd32822e5c47d68a24de897a78d040c706a3797c484504ea79acce7190ffe",
+      "local_paths_redacted": false,
+      "byte_identical": true
+    },
+    {
+      "file": "resource_optimization/concurrency_benchmark/PROTOCOL.json",
+      "original_sha256": "ddddcdfe04b5ef265b64da8589889ce90df2ddf38f8319eb676a013d5c319575",
+      "public_sha256": "ddddcdfe04b5ef265b64da8589889ce90df2ddf38f8319eb676a013d5c319575",
+      "local_paths_redacted": false,
+      "byte_identical": true
+    },
+    {
+      "file": "OPERATIONAL_AMENDMENT.json",
+      "original_sha256": "73bbd95466d5585f8c9166330b35494a800896864457805b79bfad0cdf4c682c",
+      "public_sha256": "73bbd95466d5585f8c9166330b35494a800896864457805b79bfad0cdf4c682c",
+      "local_paths_redacted": false,
+      "byte_identical": true,
+      "derived_from_controller_plan_sha256": "fc2d6107f9567ce644e1d8de936e5587cf35e3cddec5dbf46265d0f9ba605e73",
+      "compact_extraction_not_full_original_plan": true
+    },
+    {
+      "file": "README.md",
+      "original_sha256": "9c40c83527deb920ad74be506d5f1fced048bc9f6fc26b7408c834153d332b03",
+      "public_sha256": "9c40c83527deb920ad74be506d5f1fced048bc9f6fc26b7408c834153d332b03",
+      "local_paths_redacted": false,
+      "byte_identical": true,
+      "new_public_document": true
+    }
+  ],
+  "file_count_including_this_manifest": 14,
+  "first_conditional_benchmark_scope": "Foreground timing while Gemma remained active; not a full-queue speedup estimate",
+  "fourway_results_exist": false,
+  "mistral_phi_test_records_exist": false,
+  "raw_source_or_generated_prose_included": false,
+  "human_rating_material_included": false,
+  "drive_identifiers_included": false,
+  "live_process_identifiers_included": false,
+  "all_python_sources_byte_identical": true,
+  "builder_sha256": "83fb779840971ba8e885ffd4aa6db38680ce114594817349d335cb3d1f5ff469"
+}

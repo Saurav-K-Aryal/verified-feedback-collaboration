@@ -1,0 +1,102 @@
+{
+  "finished_utc": "2026-11-19T02:25:44.579107+00:00",
+  "elapsed_seconds": 112.31313845900877,
+  "complete_blocks": 4,
+  "pairs": [
+    {
+      "block": 0,
+      "serial_seconds": 13.054623707997962,
+      "parallel_seconds": 10.470600957996794,
+      "fractional_wall_improvement": 0.19793927483471296,
+      "max_relative_output_token_difference": 0.0
+    },
+    {
+      "block": 1,
+      "serial_seconds": 12.256192458997248,
+      "parallel_seconds": 11.0211211249989,
+      "fractional_wall_improvement": 0.10077120917693205,
+      "max_relative_output_token_difference": 0.0
+    },
+    {
+      "block": 2,
+      "serial_seconds": 15.004887000002782,
+      "parallel_seconds": 9.872537083996576,
+      "fractional_wall_improvement": 0.3420452227334504,
+      "max_relative_output_token_difference": 0.0
+    },
+    {
+      "block": 3,
+      "serial_seconds": 14.692354750004597,
+      "parallel_seconds": 10.549752582999645,
+      "fractional_wall_improvement": 0.2819563124831066,
+      "max_relative_output_token_difference": 0.0
+    }
+  ],
+  "median_paired_wall_improvement": 0.23994779365890978,
+  "parallel_faster_blocks": 4,
+  "errors": 0,
+  "timed_call_count": 16,
+  "capped_timed_calls": 16,
+  "output_token_comparability_passed": true,
+  "memory_guard_passed": true,
+  "memory": [
+    {
+      "utc": "2026-11-19T02:23:52.277225+00:00",
+      "free_percent": 68,
+      "exit_code": 0
+    },
+    {
+      "utc": "2026-11-19T02:24:07.476539+00:00",
+      "free_percent": 68,
+      "exit_code": 0
+    },
+    {
+      "utc": "2026-11-19T02:24:20.555127+00:00",
+      "free_percent": 68,
+      "exit_code": 0
+    },
+    {
+      "utc": "2026-11-19T02:24:31.052920+00:00",
+      "free_percent": 69,
+      "exit_code": 0
+    },
+    {
+      "utc": "2026-11-19T02:24:42.096949+00:00",
+      "free_percent": 69,
+      "exit_code": 0
+    },
+    {
+      "utc": "2026-11-19T02:24:54.376483+00:00",
+      "free_percent": 69,
+      "exit_code": 0
+    },
+    {
+      "utc": "2026-11-19T02:25:09.403476+00:00",
+      "free_percent": 66,
+      "exit_code": 0
+    },
+    {
+      "utc": "2026-11-19T02:25:19.298235+00:00",
+      "free_percent": 69,
+      "exit_code": 0
+    },
+    {
+      "utc": "2026-11-19T02:25:29.867803+00:00",
+      "free_percent": 68,
+      "exit_code": 0
+    },
+    {
+      "utc": "2026-11-19T02:25:44.579010+00:00",
+      "free_percent": 69,
+      "exit_code": 0
+    }
+  ],
+  "adoption_gate_passed": true,
+  "decision": "Eligible for reviewed operational concurrency amendment",
+  "halt_reason": null,
+  "primary_count_before": 10831,
+  "primary_count_after": 10852,
+  "condition": "Measured while Gemma continued; not a full-queue speedup estimate. No scientific schedule changed.",
+  "protocol_sha256": "ddddcdfe04b5ef265b64da8589889ce90df2ddf38f8319eb676a013d5c319575",
+  "calls_sha256": "16b4d027ecd1cd20eb0132bba783c7e6a1d9b3856cf564d054c95a0c75da5407"
+}

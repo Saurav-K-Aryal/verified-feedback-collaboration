@@ -1,0 +1,151 @@
+{
+  "prepared_utc": "2026-11-19T02:40:53.906833+00:00",
+  "version": "fourway-operational-3",
+  "code_sha256": "060289c15dd67da820342f4714fe4249712d7435fe667c66a77b5c03996774bb",
+  "binary_path": "/Applications/Ollama.app/Contents/Resources/ollama",
+  "binary_sha256": "270089e59e1d411ac4d0987154b4e95f48b29a81c9d274833c6b766d6df88300",
+  "server_version": {
+    "version": "0.40.13"
+  },
+  "model_metadata": {
+    "phi4:14b": {
+      "name": "phi4:14b",
+      "model": "phi4:14b",
+      "modified_at": "2026-11-18T14:33:11.873040273-05:00",
+      "size": 9053116391,
+      "digest": "ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "phi3",
+        "families": [
+          "phi3"
+        ],
+        "parameter_size": "14.7B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 16384,
+        "embedding_length": 5120,
+        "runner": "ggml"
+      },
+      "capabilities": [
+        "completion"
+      ]
+    },
+    "mistral-small3.2:24b": {
+      "name": "mistral-small3.2:24b",
+      "model": "mistral-small3.2:24b",
+      "modified_at": "2026-11-06T19:51:10.514151871-05:00",
+      "size": 15177384862,
+      "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "mistral3",
+        "families": [
+          "mistral3"
+        ],
+        "parameter_size": "24.0B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 5120,
+        "runner": "ggml"
+      },
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools"
+      ]
+    }
+  },
+  "endpoint": "http://127.0.0.1:11535",
+  "environment": {
+    "OLLAMA_HOST": "127.0.0.1:11535",
+    "OLLAMA_NUM_PARALLEL": "2",
+    "OLLAMA_MAX_LOADED_MODELS": "2",
+    "OLLAMA_CONTEXT_LENGTH": "8192"
+  },
+  "models": [
+    "mistral-small3.2:24b",
+    "phi4:14b"
+  ],
+  "modes": [
+    "serial",
+    "one_per_model",
+    "two_per_model"
+  ],
+  "mode_order": [
+    [
+      "serial",
+      "one_per_model",
+      "two_per_model"
+    ],
+    [
+      "one_per_model",
+      "two_per_model",
+      "serial"
+    ],
+    [
+      "two_per_model",
+      "serial",
+      "one_per_model"
+    ],
+    [
+      "two_per_model",
+      "one_per_model",
+      "serial"
+    ]
+  ],
+  "blocks": 4,
+  "requests_per_mode_per_block": 4,
+  "requests_per_model_per_mode": 2,
+  "warmups_per_model": 1,
+  "context": 8192,
+  "output_cap": 128,
+  "temperature": 0.7,
+  "top_p": 0.9,
+  "repeat_penalty": 1.0,
+  "seed_formula": "202611190000 + max(0,block+1)*100 + model_index*10 + slot; identical across modes",
+  "prompts": {
+    "-1:0": "This is a synthetic timing exercise, not a research evaluation. A fictional workshop sorts wooden tokens into bins. Each token has a printed number, a painted color, and a shape. No real people, private records, or source documents are involved. Produce a long numbered list of independent inventory entries in plain text. Each entry should state the token number, color, shape, and bin. Cycle colors red, blue, green, yellow and shapes circle, square, triangle. Start at token -99. Continue making entries for at least 100 tokens. Do not summarize or stop early. Begin the numbered list immediately and do not add an introduction.",
+    "-1:1": "This is a synthetic timing exercise, not a research evaluation. A fictional workshop sorts wooden tokens into bins. Each token has a printed number, a painted color, and a shape. No real people, private records, or source documents are involved. Produce a long numbered list of independent inventory entries in plain text. Each entry should state the token number, color, shape, and bin. Cycle colors red, blue, green, yellow and shapes circle, square, triangle. Start at token -79. Continue making entries for at least 100 tokens. Do not summarize or stop early. Begin the numbered list immediately and do not add an introduction.",
+    "0:0": "This is a synthetic timing exercise, not a research evaluation. A fictional workshop sorts wooden tokens into bins. Each token has a printed number, a painted color, and a shape. No real people, private records, or source documents are involved. Produce a long numbered list of independent inventory entries in plain text. Each entry should state the token number, color, shape, and bin. Cycle colors red, blue, green, yellow and shapes circle, square, triangle. Start at token 1. Continue making entries for at least 100 tokens. Do not summarize or stop early. Begin the numbered list immediately and do not add an introduction.",
+    "0:1": "This is a synthetic timing exercise, not a research evaluation. A fictional workshop sorts wooden tokens into bins. Each token has a printed number, a painted color, and a shape. No real people, private records, or source documents are involved. Produce a long numbered list of independent inventory entries in plain text. Each entry should state the token number, color, shape, and bin. Cycle colors red, blue, green, yellow and shapes circle, square, triangle. Start at token 21. Continue making entries for at least 100 tokens. Do not summarize or stop early. Begin the numbered list immediately and do not add an introduction.",
+    "1:0": "This is a synthetic timing exercise, not a research evaluation. A fictional workshop sorts wooden tokens into bins. Each token has a printed number, a painted color, and a shape. No real people, private records, or source documents are involved. Produce a long numbered list of independent inventory entries in plain text. Each entry should state the token number, color, shape, and bin. Cycle colors red, blue, green, yellow and shapes circle, square, triangle. Start at token 101. Continue making entries for at least 100 tokens. Do not summarize or stop early. Begin the numbered list immediately and do not add an introduction.",
+    "1:1": "This is a synthetic timing exercise, not a research evaluation. A fictional workshop sorts wooden tokens into bins. Each token has a printed number, a painted color, and a shape. No real people, private records, or source documents are involved. Produce a long numbered list of independent inventory entries in plain text. Each entry should state the token number, color, shape, and bin. Cycle colors red, blue, green, yellow and shapes circle, square, triangle. Start at token 121. Continue making entries for at least 100 tokens. Do not summarize or stop early. Begin the numbered list immediately and do not add an introduction.",
+    "2:0": "This is a synthetic timing exercise, not a research evaluation. A fictional workshop sorts wooden tokens into bins. Each token has a printed number, a painted color, and a shape. No real people, private records, or source documents are involved. Produce a long numbered list of independent inventory entries in plain text. Each entry should state the token number, color, shape, and bin. Cycle colors red, blue, green, yellow and shapes circle, square, triangle. Start at token 201. Continue making entries for at least 100 tokens. Do not summarize or stop early. Begin the numbered list immediately and do not add an introduction.",
+    "2:1": "This is a synthetic timing exercise, not a research evaluation. A fictional workshop sorts wooden tokens into bins. Each token has a printed number, a painted color, and a shape. No real people, private records, or source documents are involved. Produce a long numbered list of independent inventory entries in plain text. Each entry should state the token number, color, shape, and bin. Cycle colors red, blue, green, yellow and shapes circle, square, triangle. Start at token 221. Continue making entries for at least 100 tokens. Do not summarize or stop early. Begin the numbered list immediately and do not add an introduction.",
+    "3:0": "This is a synthetic timing exercise, not a research evaluation. A fictional workshop sorts wooden tokens into bins. Each token has a printed number, a painted color, and a shape. No real people, private records, or source documents are involved. Produce a long numbered list of independent inventory entries in plain text. Each entry should state the token number, color, shape, and bin. Cycle colors red, blue, green, yellow and shapes circle, square, triangle. Start at token 301. Continue making entries for at least 100 tokens. Do not summarize or stop early. Begin the numbered list immediately and do not add an introduction.",
+    "3:1": "This is a synthetic timing exercise, not a research evaluation. A fictional workshop sorts wooden tokens into bins. Each token has a printed number, a painted color, and a shape. No real people, private records, or source documents are involved. Produce a long numbered list of independent inventory entries in plain text. Each entry should state the token number, color, shape, and bin. Cycle colors red, blue, green, yellow and shapes circle, square, triangle. Start at token 321. Continue making entries for at least 100 tokens. Do not summarize or stop early. Begin the numbered list immediately and do not add an introduction."
+  },
+  "max_wall_seconds": 600,
+  "per_request_timeout_seconds": 90,
+  "hard_stop_utc": "2026-11-19T21:00:00+00:00",
+  "memory_sample_period_seconds": 2,
+  "minimum_memory_free_percent": 20,
+  "adoption_gate": {
+    "two_per_model": "At least10% median paired wall reduction and faster in at least3/4blocks versus BOTH one_per_model and serial, with exact128outputtokens all timedcalls, zeroerrors, and memory/power guards",
+    "one_per_model": "If two_per_model is not selected, at least10% median paired wall reduction and faster in at least3/4blocks versus serial, with identical-token/zero-error/resource guards",
+    "serial": "A valid benchmark with neither parallel gate satisfied",
+    "invalid": "Any request error, incomplete workload, token comparability failure or resource guard failure yields nonzero exit and requires controller cleanup/halt"
+  },
+  "ownership": "V2 starts and owns isolated Ollama server/process group. Benchmark never starts/stops a server or changes scientific scheduling. Caller stops owned server on nonzero exit; shared11434server is never stopped.",
+  "preconditions": [
+    "Primary exited with complete artifacts and matching protocol",
+    "No scientific inference/scoring process active",
+    "Isolated server listening PID exactly matches persisted controller-owned receipt",
+    "Same binary, version and full model metadata as shared server",
+    "Shared study models drained and unloaded before benchmarking",
+    "More than720seconds remain before global hardstop"
+  ],
+  "no_automatic_retries": true,
+  "no_generated_text_saved": true,
+  "limitations": [
+    "Synthetic fixed128-token generation only, not scientific endpoints or actual task completion throughput",
+    "All three modes use the same NUM_PARALLEL2 server, including serial mode",
+    "Benchmark selection does not guarantee the same speedup on graph/rewrite generation or detector scoring",
+    "Four paired blocks provide an operational gate, not a publication performance claim"
+  ],
+  "previous_prepared_plan_sha256": "971e2881a1179c6475bfc1d6c2678b16647ac028b8af13ecd77cd10a0af097c2",
+  "actual_capacity_guard": "After warmups and before timed blocks, require exactly two isolated-controller-owned llama-server runners. Read each runner loopback /props and require total_slots2 and per-slot n_ctx8192, plus exactly the two expected Ollama resident models. Record Ollama context_length metadata without assuming that field has per-slot rather than aggregate semantics.",
+  "capacity_reference": "https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md"
+}

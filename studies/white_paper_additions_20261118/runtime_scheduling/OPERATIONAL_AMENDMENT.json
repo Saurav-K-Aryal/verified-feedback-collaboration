@@ -1,0 +1,50 @@
+{
+  "version": "public-runtime-amendment-1",
+  "prepared_utc": "2026-11-19T02:42:58.786920+00:00",
+  "staged_utc": "2026-11-19T02:44:54.432195+00:00",
+  "status": "Prospective scheduling amendment, before Mistral/Phi test generation",
+  "source_controller_plan_sha256": "fc2d6107f9567ce644e1d8de936e5587cf35e3cddec5dbf46265d0f9ba605e73",
+  "controller_code_sha256": "ab1323254535ed2183572aeea86339f275eed0a693e002c95fb213e9d9f8feb3",
+  "hard_stop_utc": "2026-11-19T21:00:00+00:00",
+  "operational_amendment": {
+    "authorized_scope": "Explicit prospective override of the original serial-inference scheduling wording, limited to request ordering, isolated endpoint and benchmark-selected concurrency. Frozen source files are preserved, linked by hash below. Scientific tasks, prompts, decoding parameters, seeds, checkers and analyses are unchanged.",
+    "decision": "Any observed controller power pause invalidates the performance comparison. After primary exit run the frozen four-way operational benchmark on an isolated server. Adopt serial, one_per_model or two_per_model only from the helper selected_mode field and its frozen paired wall-time, token-comparability, memory and zero-error gates. No scientific outcomes control mode selection.",
+    "failed_gate": "A normally completed negative performance gate selects serial or one_per_model as specified by the frozen benchmark. Any failed/incomplete request benchmark halts and terminates the owned isolated server.",
+    "selection_protection": "Mistral scientific timing and sample-size freeze run alone. Phi starts only after TEST_PROTOCOL.json and one completed Mistral test-call record, or after Mistral exits/skips.",
+    "concurrency": "At most two generation clients and benchmark-selected one or two requests per model; never duplicate a whole experiment. Detector scoring and length wait until both clients exit, successful unload plus absent residency confirms model drain, and the owned isolated server exits.",
+    "budgets": "Original Mistral/Phi wall-clock budget rules and absolute global deadline remain unchanged; power pauses do not extend deadlines.",
+    "exclusion": "All versions hold the original continuation/controller.lock for their entire lifetime. V2 does not stop V1; root performs the reviewed wait-primary handover.",
+    "safety": "Each generation child has a separate session, exact creation-time/command identity and persistent record. Any ambiguous live identity halts further work. Cleanup visits every owned child, not only the inherited current field.",
+    "statistics": "Scheduling decisions use only operational timing, errors, output-token counts and memory. No scientific outcomes are consulted.",
+    "isolated_server": {
+      "binary": "/Applications/Ollama.app/Contents/Resources/ollama",
+      "binary_sha256": "270089e59e1d411ac4d0987154b4e95f48b29a81c9d274833c6b766d6df88300",
+      "endpoint": "http://127.0.0.1:11535",
+      "environment": {
+        "OLLAMA_HOST": "127.0.0.1:11535",
+        "OLLAMA_NUM_PARALLEL": "2",
+        "OLLAMA_MAX_LOADED_MODELS": "2",
+        "OLLAMA_CONTEXT_LENGTH": "8192"
+      },
+      "ownership": "Separate controller-owned process group, paused with children on battery and terminated on cleanup or absolute deadline. Original shared server is never signaled or reconfigured."
+    }
+  },
+  "scoped_input_sha256": {
+    "resource_optimization/dispatch_t3.py": "bb4592727ea5fd620426c84ec2f4088d4329da44d84e8a0ff18a9b2856a12e54",
+    "resource_optimization/dispatch_phi.py": "5393e26a1e3c5fb620ec02a4b1b29d7da59dd46d5e78ddcace26ce0039bf9b73",
+    "resource_optimization/benchmark_fourway.py": "060289c15dd67da820342f4714fe4249712d7435fe667c66a77b5c03996774bb",
+    "resource_optimization/FOURWAY_BENCHMARK_PLAN.json": "606084a6dda752ff51bd8438e4f935e2494ea5c715bd2d3724765b79f342fc33",
+    "resource_optimization/PHI_DISPATCH_PLAN.json": "6b3477b71805b0fee16161ffaf09bee387f9b2871a6f661dbd16984faf78fb38",
+    "topic3/t3a_bridge.py": "9465b6640912544048dc0fcac4a7735982236027d4bef3c97785cf2895d318d9",
+    "topic3/T3A_gemma/TEST_PROTOCOL.json": "45b04886783e1f630a5f13a9ba8d3e0612b687a01b11cac1f03971668281cde2",
+    "topic3/T3A_replication_source/TEST_PROTOCOL.json": "45b04886783e1f630a5f13a9ba8d3e0612b687a01b11cac1f03971668281cde2",
+    "topic3/T3A_replication_source/TEST_TASKS.json": "4042d7b799af52ee60002e4303ea607bf03c0cf5c7b6f87adbf08470c8c77463",
+    "topic12/optional_phi.py": "18db40747dc01a5f26808b4a60e14f1360d07cba797145010bfcc00dd55d3169",
+    "topic12/optional_phi/PROTOCOL.json": "6582d3b226415caccfef8fc5df2cee98bf78e4790331fafb15898b2a6a4b1e2e",
+    "topic12/optional_phi/SELECTED_TEST_MANIFEST.json": "5078c9eeededbfe54782b9125b5a3a641d45e0435ff7ca994f2b3737fcc8ad6b",
+    "topic12/optional_phi/ANALYSIS_ADDENDUM.json": "e2de21d6c8a68f3c6a2a7f3cfa873f9daeda554419bfcde7a0f29ecaa9f4f1b7"
+  },
+  "known_evidence": "An initial conditional benchmark ran while Gemma remained active. Its foreground makespan reduction is not a full-queue speedup estimate.",
+  "pending_evidence": "No four-way benchmark result or prospective Mistral/Phi test result exists at this staging checkpoint.",
+  "privacy": "Live process identifiers, machine-specific identities, full dependency chains, raw prose, response records, human ratings and Drive identifiers are omitted."
+}
